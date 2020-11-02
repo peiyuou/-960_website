@@ -1,0 +1,53 @@
+@media (max-width:575px) {
+  .post_intro {
+    .post_ani {
+      .move {
+        .main_pic {
+          .envelope {
+            width: 300px;
+            height: 230px;
+            margin: 180px auto 0;
+
+
+            .flap {
+              border-width: 115px 150px;
+              z-index: 3;
+            }
+
+            .top {
+              border-top-width: 110px;
+
+            }
+
+            .letter {
+              width: 250px;
+              height: 210px;
+              top: 10px;
+              left: 10px;
+
+              img {
+                height: 100%;
+              }
+            }
+
+          }
+        }
+
+      }
+
+      .steps {
+        .fa-arrow-right {
+          font-size: 18px;
+          display: block;
+          transform: rotate(90deg);
+          margin: 8px 0;
+        }
+
+        .mas {
+          // border: 1px solid orangered;
+          display: block;
+        }
+      }
+    }
+  }
+}

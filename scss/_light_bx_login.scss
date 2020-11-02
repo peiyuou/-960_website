@@ -1,0 +1,133 @@
+// 以下燈箱(會員登入) 
+.bg_of_lightbx {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  // border: 1px solid red;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  display: none;
+
+  .lightbx_login {
+    border: 2px solid #ffffff;
+    display: flex;
+    padding: 1%;
+    max-width: 450px;
+    min-width: 320px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFE56D;
+    border-radius: 25px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+    box-shadow: 0px 0px 5px #444444;
+
+    .close_icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      ;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 15px;
+      border: 2px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #119BEB;
+      color: white;
+      cursor: pointer;
+      transition: linear .2s;
+
+      &:hover {
+        background: #EE7002;
+      }
+    }
+
+    .cutie_top {
+      width: 150px;
+      position: absolute;
+      top: -65px;
+    }
+
+    .tiny_logo {
+      margin: 3% 0;
+      width: 100px;
+    }
+
+    h2 {
+      font-weight: bolder;
+      color: #3f3f3f;
+      padding: 1%;
+    }
+
+    .input_div {
+      display: flex;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 350px;
+      min-width: 320px;
+      flex-direction: column;
+
+      label {
+        display: flex;
+        height: 40px;
+        align-items: center;
+      }
+
+      input {
+        margin: 0;
+        padding: 0 10px;
+        width: 100%;
+        height: 35px;
+        border: 0px;
+        border-radius: 25px;
+      }
+    }
+
+    .input_btn_bx {
+      //   border: 1px solid red;
+      display: flex;
+      margin: 5% 0;
+      width: 100%;
+      flex-direction: row;
+
+      button {
+        margin: 0 auto;
+      }
+    }
+
+    .go_sign_up {
+      //   border: 2px solid blue;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      //   padding: 3%;
+      a {
+        padding: 1%;
+        font-weight: bolder;
+        //   letter-spacing: 1px;
+        color: #119BEB;
+
+        transition: linear .3s;
+
+        &:hover {
+          // box-shadow: 2px 2px 0px #EE7002;
+          color: #EE7002;
+        }
+      }
+    }
+
+} 
+}
+
+// 以上燈箱 

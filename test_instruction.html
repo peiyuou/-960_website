@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測驗說明</title>
+    @@include('app/link.html')
+    @@include('app/script.html')
+    <link rel="stylesheet" href="./bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./css/app_public.css">
+    <link rel="stylesheet" href="./css/pages_scss/test/test.css">
+    <script src="https://kit.fontawesome.com/d18b20bddd.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    @@include('app/header.html')
+  
+    <div class="instruction_test_wrap ">
+        <main class="main_instruction_wrap container">
+            <div class="circle_bg"></div>
+            <div class="instruction_test_txt">
+                <h3>測驗說明</h3>
+                <ol>
+                    <li> <span class="orderMark">一、</span>題目一共18題，每一題都會假設一個情境，搭配兩個選項，選擇最符合你會有的反應作為回答。</li>  
+                    <li><span class="orderMark">二、</span> 點選其中一個選項後，頁面自動跳轉下一題，無法返回修正。</li>
+                    <li><span class="orderMark">三、</span> 作答時請仔細閱讀題目、並依直覺作答，以免結果產生偏誤。。</li>
+                    <li><span class="orderMark">四、</span> 合宜的身心狀態 (避免疲勞、情緒起伏等)。</li>
+                    <li><span class="orderMark">五、</span> 降低外界干擾，避免受外務影響。</li>
+                    <li><span class="orderMark">六、</span> 作答結束後立即跳至測驗結果頁面，會員得以儲存測驗結果</li>
+                </ol>
+                
+            </div>
+            <div class="wrap_of_btn_instruction_of_test" >
+  
+                    <a href="./test_process.html" class="btn_primary">
+                        開始作答</a>
+            </div>
+        </main>
+        @@include('app/footer.html')
+        <!-- @@include('app/footer.html') -->
+        <!-- @@include('app/script.html') -->
+    </div>
+    <!-- @@include('app/footer.html') -->
+ 
+</body>
+</html>

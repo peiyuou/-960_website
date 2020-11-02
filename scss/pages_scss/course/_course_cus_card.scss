@@ -1,0 +1,192 @@
+@import "../../_public_dontTouch/utils/variables";
+$hot_course_btn_width: 45px;
+$cus_card_img_width: 200px;
+$course_title_margin_bottom: 20px;
+$session_margin_bottom: 50px;
+$title_gap: 20px;
+$course-sort-margin-bottom: 20px;
+$content_max_width: 900px;
+$teacher_profile_width: 150px;
+$section_gap: 70px;
+$title_gap: 20px;
+div.cus_card {
+    a {
+        display: flex;
+        border-bottom: 1px solid gray;
+        padding: 10px 0;
+        div.card_img {
+            width: $cus_card_img_width;
+            img {
+                width: 100%;
+            }
+        }
+        div.card_content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 5px 10px;
+            flex-grow: 1;
+            p {
+                font-weight: bold;
+            }
+            div.card_content_scrb {
+                div.card_content_join {
+                    span {
+                        font-size: 13px;
+                        padding: 0 5px;
+                    }
+                }
+                div.card_content_msg {
+                    margin-top: 10px;
+                    display: flex;
+                    span.card_type {
+                        // background: orange;
+                        border-radius: 5px;
+                        padding: 0 5px;
+                        line-height: 20px;
+                    }
+                    span.card_time {
+                        margin-left: 10px;
+                        padding: 0 5px;
+                        line-height: 20px;
+                    }
+                    span.card_price {
+                        margin-left: auto;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:499px) {
+    div.cus_list {
+        ul {
+            li {
+                margin-bottom: 20px;
+                div.cus_card {
+                    a {
+                        flex-direction: column;
+                        div.card_img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// course_main --> hot_course
+//hot_course
+div.hot_course {
+    margin-bottom: $course_sort_margin_bottom;
+    ul.auto_slider {
+        max-width: 1200px;
+        display: flex;
+        position: relative;
+        .owl-stage-outer {
+            padding: 10px 0;
+        }
+        .owl-nav {
+            display: inline-block;
+            display: flex;
+            position: absolute;
+            top: -22px;
+            right: 12px;
+            button {
+                &:hover {
+                    background-position: center left 2px;
+                }
+                span {
+                    background: rgb(81, 173, 104);
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    color: #fff;
+                    border-radius: 50px;
+                    margin: 5px;
+                }
+            }
+        }
+        li.auto_slider_card {
+            background: #fff;
+            flex: 1;
+            margin: 0 15px;
+            box-shadow: $card_shadow;
+            border-radius: $card_radius;
+            overflow: hidden;
+            div.auto_slider_card_pic {
+                position: relative;
+                img {
+                    width: 100%;
+                }
+                span.course_type {
+                    display: inline-block;
+                    padding: 5px;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    border-radius: 5px;
+                    box-shadow: $card_shadow;
+                }
+            }
+            div.auto_slider_card_content {
+                position: relative;
+                padding: 30px 20px 20px;
+                p {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: $title_gap;
+                }
+                div.card_content_scrb {
+                    div.card_content_join {
+                        margin-bottom: 20px;
+                        i {
+                            margin-right: 5px;
+                        }
+                        span {
+                            font-size: 13px;
+                        }
+                    }
+                    div.card_content_msg {
+                        display: flex;
+                        justify-content: space-between;
+                        span.card_time {}
+                        span.card_price {
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                div.add_cart_btn {
+                    position: absolute;
+                    top: 0;
+                    right: 10px;
+                    transform: translateY(-50%);
+                    button {
+                        width: $hot_course_btn_width;
+                        height: $hot_course_btn_width;
+                        border-radius: $hot_course_btn_width;
+                        background: #119beb;
+                        box-shadow: $card_shadow;
+                        transition: .6s ease-in-out;
+                        i {
+                            color: #fff;
+                            font-size: 18px;
+                            line-height: 45px;
+                        }
+                        &:hover {
+                            // background: #fff;
+                            i {
+                                color: $second_color1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

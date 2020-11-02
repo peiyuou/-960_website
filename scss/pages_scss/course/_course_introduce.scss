@@ -1,0 +1,285 @@
+@import "../../_public_dontTouch/utils/variables";
+@import "../../_public_dontTouch/utils/mixin";
+$content_max_width: 900px;
+$teacher_profile_width: 150px;
+$section_gap: 70px;
+$title_gap: 20px;
+@mixin intro_h2 {
+  width: 300px;
+  border-bottom: 2px solid #e8c300;
+  padding-bottom: 10px;
+  margin: 50px 0 20px;
+}
+
+div.header_wrap header.header div.header_nav ul li:nth-child(4) a::after {
+  @include header_line;
+}
+
+div#course_introduce {
+  background-image: url(../../../img/course/bg/intro.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div.course_introduce {
+  max-width: $content_max_width;
+  padding-top: 50px;
+  // banner
+  div.course_intro_banner {
+    margin-bottom: 50px;
+    div.intro_banner {
+      box-shadow: $card_shadow;
+      padding: 20px;
+      display: flex;
+      border-radius: 5px;
+      div.intro_banner_pic {
+        flex: 2;
+        margin-right: 20px;
+        div.banner_img {
+          margin-top: -50px;
+          margin-bottom: 30px;
+          box-shadow: 0 15px 10px rgba(0, 0, 0, 0.3);
+          transition: 0.6s ease-in-out;
+          border-radius: 5px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            vertical-align: middle;
+          }
+          &:hover {
+            margin-top: -60px;
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+          }
+        }
+        div.banner_type_btn {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          div.banner_type {
+            span {
+              font-size: 50px;
+              // color: rgb(196, 195, 195);
+              color: $second_color2;
+              font-weight: bolder;
+              text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+            }
+          }
+          div.banner_btn {
+            button {
+              // background: $second_color2;
+              // border-radius: 50px;
+              // padding: 5px 10px;
+              i {
+                font-size: 16px;
+                // margin-right: 5px;
+                // color: rgb(187, 187, 187);
+              }
+            }
+            button.favorite {
+            }
+            button.add_cart {
+            }
+          }
+        }
+      }
+      div.intro_banner_content {
+        flex: 1;
+        div.banner_title {
+          border-bottom: 2px solid gray;
+          margin-bottom: 30px;
+          h1 {
+            // font-size: 20px;
+            line-height: 1.5;
+            margin: 20px 0;
+          }
+          div.banner_teacher_price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            div.banner_teacher_container {
+              a {
+                display: flex;
+                background: $enterprise_color;
+                align-items: center;
+                margin-bottom: 10px;
+                padding: 5px 10px;
+                border-radius: 50px;
+                width: fit-content;
+                div.banner_teacher_img {
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50px;
+                  overflow: hidden;
+                  margin-right: 10px;
+                  img {
+                    width: 100%;
+                  }
+                }
+                span {
+                  font-weight: bold;
+                }
+              }
+            }
+            div.banner_price {
+              p {
+                font-size: 25px;
+                span {
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+        }
+        div.banner_describe {
+          p {
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+  // 講師介紹
+  div.cus_teacher {
+    max-width: $content_max_width;
+    // border: $outline1;
+    margin-bottom: $section_gap;
+    div.teacher_img {
+      div.teacher_profile {
+        // border: $outline5;
+        width: $teacher_profile_width;
+        height: $teacher_profile_width;
+        border-radius: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+        img {
+          width: 100%;
+          vertical-align: middle;
+        }
+      }
+    }
+    div.teacher_intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h2 {
+        @include intro_h2;
+        margin: 0 0 20px;
+      }
+      p {
+        line-height: 1.5;
+      }
+    }
+  }
+  // 學習到
+  div.cus_learn {
+    // margin-bottom: $section_gap;
+    div.learn_list {
+      h2 {
+        @include intro_h2;
+      }
+      ul {
+        li {
+          padding: 5px;
+          line-height: 1.5;
+        }
+      }
+    }
+    div.suitable_list {
+      h2 {
+        @include intro_h2;
+      }
+      ul {
+        li {
+          padding: 5px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  // 課程大綱
+  div.cus_outline {
+    margin-bottom: $section_gap;
+    div.cus_outline_contain {
+      width: 100%;
+      h2 {
+        @include intro_h2;
+      }
+      ol {
+        background: $second_color2;
+        border-radius: 10px; // border: 1px solid #665f5f;
+        box-shadow: $card_shadow;
+        li {
+          border-bottom: 1px solid #665f5f;
+          font-size: 18px;
+          padding: 20px;
+          line-height: 1.5;
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+
+  // 推薦課程
+}
+
+// rwd
+@media (max-width: 992px) {
+  // 學習到
+  div.suitable_list {
+    margin-bottom: 30px;
+  }
+
+  div.course_introduce div.cus_teacher div.teacher_intro h2 {
+    @include intro_h2;
+  }
+}
+
+@media (max-width: 920px) {
+  // banner
+  div.course_intro_banner {
+    div.intro_banner {
+      flex-direction: column;
+    }
+  }
+
+  div.course_introduce
+    div.course_intro_banner
+    div.intro_banner
+    div.intro_banner_pic
+    div.banner_type_btn
+    div.banner_type
+    span {
+    font-size: 30px;
+  }
+  div.course_introduce
+    div.course_intro_banner
+    div.intro_banner
+    div.intro_banner_content
+    div.banner_title
+    h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 376px) {
+  // banner
+  div.course_introduce
+    div.course_intro_banner
+    div.intro_banner
+    div.intro_banner_pic
+    div.banner_type_btn {
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  div.course_introduce
+    div.course_intro_banner
+    div.intro_banner
+    div.intro_banner_pic
+    div.banner_type_btn
+    div.banner_type
+    span {
+    font-size: 20px;
+  }
+}

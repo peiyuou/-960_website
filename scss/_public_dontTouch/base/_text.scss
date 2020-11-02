@@ -1,0 +1,39 @@
+@import "../utils/variables";
+
+body {
+  font-family: "微軟正黑體";
+}
+
+img {
+  vertical-align: middle;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+// h4 {
+//     font-size: 18px;
+// }
+
+// h5 {
+//     font-size: 16px;
+//     // font-family: '標楷體';
+// }
+
+p {
+  font-size: 18px;
+}
+
+.p_small {
+  font-size: 15px;
+}

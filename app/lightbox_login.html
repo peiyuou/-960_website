@@ -1,0 +1,28 @@
+<!-- lightboxhere 會員登入燈箱在這裡 -->
+<div class="bg_of_lightbx">
+    <div class="lightbx_login">
+        <div class="close_icon fas  fa-times" id="closeBtn" v-on:click="btnClose" ></div>
+        <img class="cutie_top" src="./img/上方探頭小人.svg"   alt="">
+        <img  class="tiny_logo" src="./img/LOGO_FINAL.svg"  alt="">
+        <h2>會員登入</h2>
+        <form class = "sign_in_form" action = "#" v-if="signIn == true" >
+            <div class = "input_div">
+                <label for="account" class="input_label">帳號：</label>
+                <input type="email" placeholder="123@gmail.com" required="required" class="input_field" id="account" value="123456789@gmail.com">
+            </div>
+            <div class = "input_div">
+                <label for="code" class="input_label">密碼：</label>
+                <input type="password"  pattern="[a-zA-Z0-9]{10,10}" required="required" class="input_field" id="code" value="1234567890">
+            </div>
+            <div class = "input_btn_bx">
+                <button class = "btn_primary login_btn" @click.prevent="changeState()">會員登入</button>
+            </div>
+            <div class="go_sign_up">
+                <span>還不是會員嗎?</span><a href="./member_sign_in.html">立即註冊</a>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- lightboxhere -->
+
+

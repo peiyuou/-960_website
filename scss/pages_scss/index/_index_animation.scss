@@ -1,0 +1,134 @@
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin animation($str, $count:1, $duration:2s, $function:ease-in) {
+    animation: #{$str};
+    animation-iteration-count: $count;
+    animation-duration: $duration;
+    animation-timing-function: $function;
+    @content;
+}
+
+@include keyframes(firstStair) {
+    from {
+        padding-top: 15%;
+    }
+    to {
+        padding-top: 0%;
+    }
+}
+
+@include keyframes(secondStair) {
+    from {
+        padding-top: 25%;
+    }
+    to {
+        padding-top: 0%;
+    }
+}
+
+@include keyframes(thirdStair) {
+    from {
+        padding-top: 35%;
+    }
+    to {
+        padding-top: 0%;
+    }
+}
+
+@include keyframes(third) {
+    from {
+        top: 215px;
+    }
+    to {
+        top: 160px;
+    }
+}
+
+@include keyframes(second) {
+    from {
+        top: 215px;
+    }
+    to {
+        top: 75px;
+    }
+}
+
+@include keyframes(first) {
+    from {
+        top: 215px;
+    }
+    to {
+        top: 20px;
+    }
+}
+
+@include keyframes(spin) {
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@include keyframes (pulse) {
+    0% {
+        transform: rotateZ(0);
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@include keyframes (card) {
+    0% {
+        left: -30%;
+        top: 120px;
+        transform: rotate(8deg);
+    }
+    100% {
+        left: 9%;
+        top: 50px;
+        transform: rotate(15deg);
+    }
+}
+
+@include keyframes (cardBounce) {
+    0% {
+        transform: rotate(12deg);
+    }
+    33% {
+        transform: rotate(-20deg);
+    }
+    66% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@include keyframes(stairDown) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframes(stairUp) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

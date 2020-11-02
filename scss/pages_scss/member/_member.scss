@@ -1,0 +1,685 @@
+body.mem {
+  // height: 100vh;
+  min-height: 100vh;
+  background-color: #f6f3ed;
+  background-image: url("../../../img/member/member.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mem_con_width {
+  display: flex;
+  padding: 0;
+  max-width: 1200px;
+  min-height: calc(100% - 130px);
+  flex-wrap: wrap;
+  div.mem_list {
+    height: 100%;
+    min-height: calc(100vh - 130px);
+    background-color: transparent;
+    border-radius: 25px;
+    .mem_img_area {
+      display: flex;
+      height: fit-content;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      .mem_img {
+        margin: 20px auto 0;
+        width: 100px;
+        height: 100px;
+        border: 1px black solid;
+        background-color: white;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+      span {
+        margin: 20px auto 0px;
+      }
+    }
+    > ul {
+      text-align: center;
+      > li {
+        display: flex;
+        margin: 15px 0;
+        padding-left: 10px;
+        height: fit-content;
+        min-height: 40px;
+        align-items: center;
+        border-radius: 25px;
+        cursor: pointer;
+        text-align: start;
+      }
+      li.liCol {
+        flex-wrap: wrap;
+        span {
+          margin-top: 10px;
+          width: 100%;
+        }
+        ul {
+          display: none;
+          margin: 10px 0px 0px 0px;
+          li {
+            margin: 5px 0px;
+            padding-left: 15px;
+          }
+        }
+        .li_sec_show {
+          display: block;
+        }
+      }
+    }
+    a.mem_con_ind_rwd {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      z-index: 10;
+      i {
+        display: flex;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+      }
+      .fa-arrow-left:before {
+        font-size: 32px;
+      }
+    }
+  }
+  div.mem_con_area {
+    display: flex;
+    padding: 0;
+    min-height: calc(100% - 130px);
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    .mem_con_title {
+      display: flex;
+      margin: 50px auto 0;
+      padding: 0;
+      width: 100%;
+      height: 50px;
+      align-items: center;
+      // flex-direction: row;
+      // justify-content: flex-start;
+      // h1{
+      //     margin: 0 auto;
+      // }
+    }
+    .mem_con_title_rwd {
+      display: flex;
+      width: 100%;
+      height: 50px;
+      flex-direction: column;
+      justify-content: center;
+      i {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+      }
+      .fa-arrow-left:before {
+        font-size: 32px;
+      }
+      h1 {
+        margin: 0 auto;
+      }
+    }
+    div.container {
+      display: flex;
+      padding: 0;
+      height: 100%;
+      min-height: calc(100vh - 130px);
+      align-items: flex-start;
+      border-radius: 25px;
+      flex-wrap: wrap;
+      background-color: #ffffff;
+      .mem_img_area {
+        display: flex;
+        height: 100%;
+        // min-height: calc(100vh - 130px);
+        background-color: #a0cadb;
+        border-radius: 25px;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        .mem_img {
+          margin: 20px auto 0;
+          width: 200px;
+          height: 200px;
+          border: 1px black solid;
+          background-color: white;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+        label {
+          margin: 20px auto 0px;
+          cursor: pointer;
+        }
+        input {
+          display: none;
+        }
+      }
+      .mem_con_detail {
+        display: flex;
+        height: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: start;
+        form.mem_detail {
+          display: flex;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 540px;
+          min-width: 320px;
+          flex-direction: column;
+          table,
+          tr {
+            width: 100%;
+          }
+          table {
+            margin-top: 175px;
+          }
+          tr {
+            height: 50px;
+          }
+          th {
+            text-align: start;
+          }
+          td {
+            // width: 50%;
+            text-align: start;
+            vertical-align: middle;
+            input {
+              width: 100%;
+              height: 100%;
+            }
+            input.new_code {
+              width: 50%;
+            }
+          }
+          td:first-child {
+            width: 120px;
+          }
+          .mem_det_btn_use {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            button {
+              margin: 0;
+            }
+            button:last-child {
+              margin-left: 50px;
+            }
+          }
+        }
+      }
+      .col-sm-12 {
+        padding: 0;
+      }
+      .mem_tit_area {
+        display: flex;
+        margin: 20px auto 0;
+        padding: 0;
+        width: 100%;
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
+        background-color: #a0cadb;
+        .mem_title {
+          display: inline-flex;
+          padding: 0px 0px 0px 30px;
+          height: 40px;
+          // text-align: center;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .mem_title_tab {
+          margin: 0 auto;
+          width: 150px;
+          cursor: pointer;
+        }
+      }
+      .mem_con_height {
+        display: flex;
+        margin: 0 auto;
+        padding: 0;
+        height: fit-content;
+        min-height: calc(100% - 162px);
+        flex-direction: column;
+      }
+      .mem_ana_area,
+      .mem_cla_area,
+      .mem_art_area,
+      .mem_pos_area,
+      .mem_ord_area,
+      .mem_mes_area {
+        display: flex;
+        margin: 0 auto;
+        height: fit-content;
+        align-items: center;
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
+        padding: 0;
+        width: 100%;
+        flex-wrap: wrap;
+        .col-md-12,
+        .col-3,
+        .col-6 {
+          padding: 0;
+        }
+        .col-6,
+        .col-5 {
+          display: flex;
+          flex-direction: column;
+        }
+        .mem_ana,
+        .mem_cla,
+        .mem_ord,
+        .mem_pos {
+          display: inline-flex;
+          margin: 10px 0;
+          padding: 0px 0px 0px 30px;
+          height: 40px;
+          // text-align: center;
+          flex-direction: column;
+          justify-content: center;
+          .mem_click {
+            height: 25px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            cursor: pointer;
+          }
+          i {
+            padding: 0px 5px;
+            width: fit-content;
+            height: fit-content;
+          }
+          img {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 360px;
+            height: 100%;
+            max-height: 200px;
+            // background-color: gray;
+          }
+        }
+        .mem_ord_det {
+          padding: 0;
+          a {
+            display: flex;
+            align-items: center;
+          }
+        }
+        .mem_ana_det,
+        .mem_ord_det {
+          display: flex;
+          margin: 10px 0;
+          border: 2px #ffe56d solid;
+          border-radius: 20px;
+          flex-direction: row;
+          flex-wrap: wrap;
+          position: absolute;
+          opacity: 0;
+          transform: rotateX(70deg);
+          z-index: -1;
+          .mem_ana_det_left {
+            display: flex;
+            margin-top: 5px;
+            height: fit-content;
+            flex-direction: column;
+            h2 {
+              padding: 0px 15px;
+            }
+            section {
+              margin-top: 20px;
+              padding: 0px 15px;
+            }
+          }
+          .mem_ana_det_right {
+            margin-top: 5px;
+            height: 300px;
+            .mem_plot {
+              margin: 0 auto;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .mem_ord_det_con {
+            display: flex;
+            // margin-top: 5px;
+            padding: 0;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .mem_ord {
+              margin: 5px 0;
+              height: fit-content;
+            }
+          }
+        }
+        .show {
+          position: relative;
+          opacity: 1;
+          transform: rotateX(0deg);
+          transition: 1s;
+          z-index: 1;
+        }
+        a {
+          margin: 0;
+        }
+        .mem_cla {
+          margin-top: 5px;
+        }
+        a.mem_art_area,
+        a.mem_cla_area {
+          display: flex;
+          border: 0px;
+          // flex-direction: column;
+          .mem_art {
+            margin: 5px auto;
+            padding: 0px 0px 0px 30px;
+            width: 100%;
+            height: fit-content;
+          }
+          // .mem_art_content{
+          //     opacity: 0.7;
+          // }
+        }
+        .mem_cla {
+          height: fit-content;
+        }
+        .mem_pos {
+          display: inline-flex;
+          height: fit-content;
+          min-height: 40px;
+          // text-align: center;
+          flex-direction: column;
+          justify-content: center;
+          span {
+            // margin: 0 auto;
+            width: fit-content;
+          }
+        }
+        .mem_pos_img {
+          // margin: 0 auto;
+          // width: 200px;
+          // height: 200px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .mem_art_area,
+      .mem_cla_area,
+      .mem_pos_area,
+      .mem_ord_det,
+      .mem_mes_area {
+        cursor: pointer;
+      }
+      div.mem_art_area {
+        height: 40px;
+        align-items: center;
+        border: 3px solid;
+        background-color: #fff;
+        transition: linear 0.2s;
+      }
+      div.mem_art_area:hover {
+        transform: scale(1.05);
+        background: #f6f3ed;
+      }
+      .mam_no_data {
+        display: flex;
+        height: fit-content;
+        min-height: calc(100% - 162px);
+        flex-direction: column;
+        justify-content: center;
+        h3 {
+          margin: 0 auto 20px;
+          width: fit-content;
+        }
+        a {
+          margin: 0 auto;
+          width: fit-content;
+        }
+      }
+    }
+    button {
+      margin: 0 auto;
+    }
+  }
+}
+.mem_overlay {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  opacity: 1;
+  transition: opacity 1s;
+  display: none;
+  .mem_checkMsg {
+    background-color: #ccc;
+    border-radius: 10px;
+    height: 100%;
+    max-height: 100vh;
+    padding: 0 5px;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 800px;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    overflow: scroll;
+    overflow-x: hidden;
+    .close_btn {
+      height: 40px;
+      text-align: left;
+      padding-left: 5px;
+      .btn_modal_close {
+        width: 60px;
+        height: 30px;
+        line-height: 25px;
+      }
+    }
+    .mem_wrap,
+    .mem_ove_feedback {
+      background: #f8f6f2;
+      .mem_ove_info {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        line-height: 33px;
+        color: gray;
+        .mem_ove_list {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .mem_ove_img {
+            width: 40px;
+            // height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            img {
+              width: 100%;
+            }
+          }
+          .mem_ove_name {
+            margin: 0 10px;
+          }
+        }
+        .mem_ove_tags {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-size: 100%;
+          font: inherit;
+          vertical-align: baseline;
+          span {
+            background-color: #1b4d9f;
+            padding: 5px;
+            border-radius: 5px;
+            color: #fff;
+          }
+        }
+      }
+      .mem_ove_title {
+        padding: 20px;
+        font-weight: 700;
+        font-size: 22px;
+      }
+      .mem_ove_textarea {
+        padding: 5px 20px;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        color: #000;
+      }
+      .mem_ove_btn {
+        padding-top: 15px;
+        text-align: end;
+        .heart {
+          box-sizing: border-box;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          border: none;
+          outline: 0;
+          border-radius: 50%;
+          i {
+            width: 100%;
+            height: 100%;
+            font-size: 21px;
+            cursor: pointer;
+            color: #ada9a9;
+          }
+          i.colorRed {
+            color: red;
+          }
+        }
+        .gray_btn {
+          box-sizing: border-box;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          border: none;
+          outline: 0;
+          border-radius: 50%;
+          i {
+            width: 100%;
+            height: 100%;
+            font-size: 21px;
+            cursor: pointer;
+            color: #ada9a9;
+          }
+          i.colorGray {
+            color: #4b4747;
+          }
+        }
+      }
+      .mem_ove_feedback_content {
+        background-color: #f8f6f2;
+        margin: 5px 0;
+      }
+    }
+    .mem_ove_feedback {
+      background-color: transparent;
+    }
+    .mem_ove_feedback_count {
+      text-align: center;
+      background-color: #f7ecd9;
+      padding: 10px;
+      margin: 5px 0;
+    }
+    .mem_ove_leave_msg {
+      width: 100%;
+      background-color: #fff;
+      text-align: right;
+      position: sticky;
+      bottom: 0;
+      .send_msg {
+        width: 100%;
+        resize: none;
+        border: none;
+        padding: 10px;
+      }
+      .mem_ove_msg_btn {
+        padding-bottom: 15px;
+        text-align: center;
+        #send_msg_btn {
+          width: 60px;
+          height: 30px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}
+.ove_pos {
+  .mem_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: calc(100vh - 40px);
+    img {
+      margin: 0 auto;
+      max-height: calc(50vh - 20px);
+    }
+  }
+}
+.artShow {
+  z-index: 300;
+  position: fixed;
+  display: block;
+}
+.impeachment_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s;
+  > article {
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f5edde;
+    .accuse_close_btn {
+      text-align: right;
+    }
+    h3,
+    .accuse_send_btn {
+      text-align: center;
+    }
+    .accuse_wrap {
+      width: 300px;
+      padding-top: 10px;
+      p {
+        padding: 5px;
+      }
+    }
+  }
+}
+.-on {
+  opacity: 1;
+  z-index: 400;
+}

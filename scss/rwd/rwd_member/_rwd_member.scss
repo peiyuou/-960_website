@@ -1,0 +1,54 @@
+@media screen and (min-width:991px){
+    div.mem_log_con_width li:hover{
+        background-color: #A0CADB !important;
+    }
+    div.mem_ana_area:hover, div.mem_cla_area:hover, div.mem_pos_area:hover, div.mem_ord_area:hover, div.mem_mes_area:hover{
+        border: 1px #FFE56D solid !important;
+    }
+}
+@media screen and (max-width:991px){
+    div.mem_list{
+        background-color: #A0CADB !important;
+    }
+    .mem_img{
+        width: 200px !important;
+        height: 200px !important;
+    }
+    li{
+        background-color: transparent;
+        span{
+            margin: 0 auto;
+        }
+    }
+    li.liCol{
+        text-align: center !important;
+        ul{
+            margin: 10px auto 0 !important;
+        }
+    }
+}
+@media screen and (max-width:768px){
+    .mem_img_area{
+        height: 300px !important;
+    }
+    .mem_con_detail{
+        margin: 0 auto !important;
+        height: fit-content !important;
+    }
+    table{
+        margin-top: 15px !important;
+    }
+    .mem_det_btn_use{
+        button {
+            margin: 0 auto !important;
+            // width: 50% !important;
+            // border-radius: 0px !important;
+        }
+    }
+    .mem_cla, .mem_pos{
+        text-align: center;
+        span{
+            margin: 0 auto;
+        }
+    }
+}

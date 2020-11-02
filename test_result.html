@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測驗結果</title>
+    @@include('app/link.html') @@include('app/script.html')
+    <link rel="stylesheet" href="./css/pages_scss/test/test.css">
+    <script src="https://kit.fontawesome.com/d18b20bddd.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/echarts/4.8.0/echarts.js'></script>
+
+</head>
+
+<body>
+    <!-- <script>console.log('???')</script> -->
+    @@include('app/header.html')
+    <div class="test_result_wrap " id="testResult">
+        <!-- lightboxhere 會員登入燈箱在這裡 -->
+        <div class="bg_of_lightbx">
+            <div class="lightbx_login">
+                <div class="close_icon fas  fa-times" id="closeBtn" v-on:click="btnClose"></div>
+                <img class="cutie_top" src="./img/上方探頭小人.svg" alt="">
+                <img class="tiny_logo" src="./img/LOGO_FINAL.svg" alt="">
+                <h2>會員登入</h2>
+                <form class="sign_in_form" action="#" v-if="signIn == true">
+                    <div class="input_div">
+                        <label for="account" class="input_label">帳號：</label>
+                        <input type="email" placeholder="123@gmail.com" required="required" class="input_field" id="account" value="123456789@gmail.com">
+                    </div>
+                    <div class="input_div">
+                        <label for="code" class="input_label">密碼：</label>
+                        <input type="password" pattern="[a-zA-Z0-9]{10,10}" required="required" class="input_field" id="code" value="1234567890">
+                    </div>
+                    <div class="input_btn_bx">
+                        <button class="btn_primary login_btn" @click.prevent="changeState()">會員登入</button>
+                    </div>
+                    <div class="go_sign_up">
+                        <span>還不是會員嗎?</span><a href="./member_sign_in.html">立即註冊</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- lightboxhere -->
+
+        <main class="main_test_result container">
+            <div class="title_result">
+                <h1>測驗結果</h1>
+            </div>
+            <div class="type_analysis">
+                <div class="analysis_description ">
+                    <div class="analysis_txt" >
+                        <span>測驗結果出爐，您的類型是．．．</span>
+                        <h2 style="color: blcak;" class="typeName" :style="{backgroundColor:anaTypeResult[0].IND_COLOR}" >{{ anaTypeResult[0].IND_CLASS }}</h2>
+                            <!-- &emsp;&emsp;&emsp;&emsp; -->
+                            <p class="type_descrp"  >{{ anaTypeResult[0].IND_INFO }}</p>
+                        <!-- <h3 class="accuracy">準確率{{ resultData[index].accuracy }} %</h3> -->
+                    </div>
+                    <div class="chart_bx">
+                        <div class="test_radar" id="testRadar" style="width:500px;"></div>
+                    </div>
+                </div>
+                <div class="btn_save_bx">
+                    <button class="result_save_btn btn_third" @click="saveResult">儲存測驗結果</button>
+                </div>
+            </div>
+            <div class="related_job_wrap">
+                <div class="title_bx">
+                    <h2>此類型相關工作</h2>
+                </div>
+                <div class="related_job">
+                    <ul class="jobs row ">
+                        <li class="" v-for="(item, index) in relatedJob" :key="index" v-on:click="jobPage(item.IND_INT_NO)">
+                            <a>
+                                <img :src="item.IND_INT_PICTURE" alt="">
+                                <h3>{{ item.IND_INT_NAME }}</h3>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="btn_wrap">
+                        <a href="./career.html" class="btn_second">
+                 看更多
+                </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="more_course_wrap">
+                <div class="title_bx">
+                    <h2>此類型相關課程</h2>
+                </div>
+
+                <ul class="allCourseCards">
+                    <li class="courseCard" v-for="(item, index) in relatedCourse" :key="index">
+                        <a class="link_to_course" :href="'./course_introduce.html?ski_no=' + item.SKI_NO ">
+                            <img :src="item.SKI_IMG" alt="">
+                            <span class="card_type" :style="{backgroundColor:item.IND_COLOR}"> 
+            {{item.IND_CLASS}}
+        </span>
+
+                            <h3 class="courseTitle">{{ item.SKI_NAME }}</h3>
+                            <p class="courseDetail">
+                                <i class="fas fa-user-friends"></i>
+                                <span>{{item.SKI_BUY_NUM}}人已參與課程</span>
+                            </p>
+                            <p class="courseCount">
+                                <span>總計{{item.SKI_TIME}}小時</span>
+                                <span class="coursePrice">NT${{item.SKI_PRICE}}</span>
+                            </p>
+                        </a>
+
+                    </li>
+                </ul>
+
+
+                <div class="btn_wrap">
+                    <a href="./course_main.html" class="btn_second">
+                看更多</a>
+                </div>
+            </div>
+
+            <div class="check_forum">
+
+                <div class="title_bx">
+                    <h2>此類型相關討論話題</h2>
+                </div>
+                <div class="article_wrap">
+                    <ul class="articles">
+                        <li v-for="(item, index) in relatedDiscuss" :key="index" :style="{borderColor:item.IND_COLOR}" @click="openArtPage(index)">
+                            <a>
+                                <span :style="{backgroundColor:item.IND_COLOR}">{{item.DIS_CLASS}}</span>{{item.DIS_NAME}}</a>
+                        </li>
+                    </ul>
+                    <div class="btn_wrap">
+                        <a href="./forum_discuss.html" class="btn_second">
+                看更多
+               </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mem_overlay" @click="closeArtPage">
+                <div class="mem_checkMsg" @click.stop>
+                    <div class="close_btn">
+                        <button type="button" class="btn_modal_close btn_third" @click="closeArtPage">
+                            返回
+                        </button>
+                    </div>
+                    <div class="mem_wrap">
+                        <div class="mem_ove_info">
+                            <div class="mem_ove_list">
+                                <div class="mem_ove_img">
+                                    <img :src="industryForumMessage.MEM_PIC" />
+                                </div>
+                                <div class="mem_ove_name">
+                                    {{industryForumMessage.MEM_NAME}}
+                                </div>
+                                <div class="mem_ove_date">
+                                    {{industryForumMessage.DIS_DATE}}
+                                </div>
+                            </div>
+                            <div class="mem_ove_tags">
+                                <span :style="{backgroundColor:industryForumMessage.IND_COLOR}" >{{industryForumMessage.IND_CLASS}}</span>
+                                <span>{{industryForumMessage.DIS_CLASS}}</span>
+                            </div>
+                        </div>
+                        <div class="mem_ove_title">
+                            {{industryForumMessage.DIS_NAME}}
+                        </div>
+                        <div class="mem_ove_textarea" v-for="(item, index) in industryForumMessage.DIS_CONTENT">
+                            {{item}}
+                        </div>
+                        <div class="mem_ove_btn">
+                            <button class="heart">
+                                <i class="fas fa-heart" :class="{'colorRed':industryForumMessage.like}" @click="$forceUpdate(), changeArticleLike(industryForumMessage)"></i>
+                            </button>
+                            <button class="gray_btn">
+                                <i class="fas fa-bookmark"  :class="{'colorGray':industryForumMessage.collect}" @click="$forceUpdate(), changeCollect(industryForumMessage)"></i>
+                            </button>
+                            <button class="gray_btn">
+                                <i class="fas fa-exclamation-circle" @click="openAccuse(), repIndex = -1, repConNum = 0, repNo = industryForumMessage.DIS_NO"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mem_ove_feedback_count">
+                        共{{industryForumMessage.length}}則回覆
+                    </div>
+                    <div class="mem_ove_feedback" v-if="industryForumMessage.length != 0">
+                        <div class="mem_ove_feedback_content" v-for="(item, index) in memberArticleMessage">
+                            <div class="mem_ove_info">
+                                <div class="mem_ove_list">
+                                    <div class="mem_ove_img">
+                                        <img :src="item.MEM_PIC" />
+                                    </div>
+                                    <div class="mem_ove_name">
+                                        {{item.MEM_NAME}}
+                                    </div>
+                                    <div class="mem_ove_date">
+                                        {{item.DIS_MES_DATE}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mem_ove_textarea">
+                                {{item.DIS_MES_CONTENT}}
+                            </div>
+                            <div class="mem_ove_btn">
+                                <button class="heart">
+                                    <i class="fas fa-heart" :class="{'colorRed':item.like}" @click="$forceUpdate(), item.like = !item.like, changeMessageLike(item.DIS_MES_NO)"></i>
+                                </button>
+                                <button class="gray_btn">
+                                    <i class="fas fa-exclamation-circle" @click="accuseIsOpen = !accuseIsOpen, repIndex = -1, repConNum = 1, repNo = item.DIS_MES_NO"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mem_ove_leave_msg">
+                        <div class="mem_ove_leave_msg_content">
+                            <textarea class="send_msg" placeholder="請輸入訊息..."></textarea>
+                        </div>
+                        <div class="mem_ove_msg_btn">
+                            <input type="submit" value="送出" class="btn_third" id="send_msg_btn" @click="$forceUpdate(), sendMessage(industryForumMessage.DIS_NO, industryForumMessage.length)" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="impeachment_overlay" :class="{'-on':accuseIsOpen}" @click="accuseIsOpen = !accuseIsOpen, closeAccuse()">
+                <article @click.stop>
+                    <div class="accuse_close_btn">
+                        <button type="button" class="impeachment_close_btn" @click="accuseIsOpen = !accuseIsOpen, closeAccuse()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <h3>檢舉這篇文章的原因？</h3>
+                    <div class="accuse_wrap">
+                        <p v-for="(item, index) in memberAccuse">
+                            <label @click="repIndex = index">
+                                <input type="radio" name="accuse" class="radio"/>{{item}}
+                            </label>
+                        </p>
+                    </div>
+                    <div class="accuse_send_btn">
+                        <button class="impeachment_send_btn btn_third" @click="sendReport()">送出</button>
+                    </div>
+                </article>
+            </div>
+
+        </main>
+        @@include('app/footer.html')
+    </div>
+    <script type="text/javascript" src="./js/test/test_result_vue.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

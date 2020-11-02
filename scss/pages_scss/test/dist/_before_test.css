@@ -1,0 +1,307 @@
+@charset "UTF-8";
+div.before_test_wrap {
+  background-image: url(../../../img/test/background_before_test.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  margin: auto;
+}
+div.before_test_wrap .main_before_test {
+  margin: auto;
+  padding-top: 3%;
+}
+div.before_test_wrap .main_before_test .wrap_of_btn_before_test {
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+}
+div.before_test_wrap .main_before_test section.origin_of_types_before_test {
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  border-radius: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1%;
+  margin-bottom: 3%;
+  border-radius: 10px;
+}
+div.before_test_wrap .main_before_test section.origin_of_types_before_test h1 {
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1% 2%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+div.before_test_wrap .main_before_test section.origin_of_types_before_test p {
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test {
+  margin: 2% 0;
+  width: 100%;
+  position: relative;
+}
+@media screen and (max-width: 980px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test {
+    width: 100%;
+    height: 350px;
+    margin: auto;
+    overflow: hidden;
+    border: 3px solid #242424;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 575px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border: 3px solid #242424;
+    border-radius: 5px;
+  }
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 980px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap {
+    animation: slide 24s infinite linear;
+    position: absolute;
+  }
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card {
+  width: 100px;
+  height: 350px;
+  border-radius: 100px;
+  background: #F6F3ED;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  transition: linear 1s;
+  overflow: hidden;
+}
+@media screen and (max-width: 980px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card {
+    width: 100%;
+    border-radius: 5px;
+    justify-content: space-between;
+  }
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .card_intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  height: 50%;
+  background-image: url(../../../img/test/機車維修.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media screen and (max-width: 980px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .card_intro {
+    background-position: left;
+    height: 80%;
+  }
+}
+@media screen and (max-width: 375px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .card_intro {
+    background-size: 20%;
+    background-position: top;
+    align-items: flex-end;
+  }
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .card_intro .card_txt {
+  padding: 1%;
+  width: 60%;
+  display: none;
+  line-height: 1.5rem;
+  height: auto;
+  transition-timing-function: 1s;
+  transition: linear 2s;
+  background: rgba(255, 255, 255, 0.7);
+}
+@media screen and (max-width: 980px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .card_intro .card_txt {
+    display: block;
+  }
+}
+@media screen and (max-width: 375px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .card_intro .card_txt {
+    width: 100%;
+  }
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .color_ball_bx {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #79BBB5;
+  height: 50%;
+  position: relative;
+  z-index: 0;
+}
+@media screen and (max-width: 980px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .color_ball_bx {
+    height: 20%;
+  }
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .color_ball_bx h3 {
+  font-weight: 900;
+  position: absolute;
+  z-index: 20;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .color_ball_bx .ball {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  background: #F6F3ED;
+  border-radius: 50px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  z-index: 3;
+  animation: shake 1.5s alternate infinite linear;
+}
+@media screen and (max-width: 980px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .color_ball_bx .ball {
+    display: none;
+  }
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .color_ball_bx_I {
+  background: #A0CADB;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .color_ball_bx_A {
+  background: #CCC5E3;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .color_ball_bx_S {
+  background: #F4C3C5;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .color_ball_bx_E {
+  background: #F7EA92;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card .color_ball_bx_C {
+  background: #E7995F;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover {
+  width: 450px;
+  background-size: 90%;
+  border-radius: 5px;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover .card_intro {
+  height: 80%;
+  background-position: left;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover .color_ball_bx {
+  background: #F6F3ED;
+  height: 20%;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover .ball_R {
+  background: #79BBB5;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover .ball_I {
+  background: #A0CADB;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover .ball_A {
+  background: #CCC5E3;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover .ball_S {
+  background: #F4C3C5;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover .ball_E {
+  background: #F7EA92;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover .ball_C {
+  background: #E7995F;
+}
+div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover .card_txt {
+  display: block;
+}
+@media screen and (max-width: 980px) {
+  div.before_test_wrap .main_before_test .all_type_card_before_test .cards_wrap .type_card:hover {
+    width: 100%;
+  }
+}
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  75% {
+    transform: translateX(30px);
+  }
+}
+@keyframes bounce {
+  0% {
+    left: -20;
+    border-radius: 40%;
+    transform: scaleX(1.1);
+  }
+  25% {
+    height: 50px;
+    border-radius: 50%;
+    transform: scaleX(1);
+    border-radius: 100px 70px 50px 60px;
+  }
+  60% {
+    right: 0;
+    width: 80px;
+    border-radius: 80%;
+  }
+  100% {
+    right: 50%;
+    border-radius: 100px;
+    transform: scaleX(0.8);
+    transition-delay: 0.5s;
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translate(0, 0);
+  }
+  8% {
+    transform: translate(0, 0);
+  }
+  18% {
+    transform: translate(0, -350px);
+  }
+  26% {
+    transform: translate(0, -350px);
+  }
+  36% {
+    transform: translate(0, -700px);
+  }
+  42% {
+    transform: translate(0, -700px);
+  }
+  50% {
+    transform: translate(0, -1050px);
+  }
+  60% {
+    transform: translate(0, -1050px);
+  }
+  68% {
+    transform: translate(0, -1400px);
+  }
+  78% {
+    transform: translate(0, -1400px);
+  }
+  84% {
+    transform: translate(0, -1750px);
+  }
+  94% {
+    transform: translate(0, -1750px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

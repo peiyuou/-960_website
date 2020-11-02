@@ -1,0 +1,8 @@
+@import "./before_test";
+@import "./instruction_test";
+@import "./during_test";
+@import "./test_result";
+@import'../../_public_dontTouch/utils/mixin';
+div.header_wrap header.header div.header_nav ul li:nth-child(1) a::after {
+    @include header_line;
+}

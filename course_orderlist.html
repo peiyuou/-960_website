@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>課程清單</title>
+    @@include('app/link.html') @@include('app/script.html')
+    <link rel="stylesheet" href="./css/pages_scss/course/course.css" />
+  </head>
+
+  <body>
+    <!-- course_list -->
+    <div id="course_main">
+      <div class="header_wrap">
+        <header class="header">
+          <div class="hamburger">
+            <button
+              class="hamburger hamburger--spring btn_switch"
+              type="button"
+            >
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+          <div class="logo">
+            <a href="front_index.html">
+              <img src="img/LOGO_FINAL.svg" alt="" />
+            </a>
+          </div>
+          <div class="header_nav">
+            <ul>
+              <li><a href="test_before.html" id="text_page">職涯分析</a></li>
+              <li><a href="career.html">行業攻略</a></li>
+              <li><a href="forum_discuss.html">職涯論壇</a></li>
+              <li><a href="course_main.html">探索課程</a></li>
+              <li><a href="post_intro.html">時光明信片</a></li>
+            </ul>
+          </div>
+          <div class="header_icon">
+            <div class="cart">
+              <button href="#">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="cart_num" v-show="cart_items.length !== 0">
+                  <span>{{cart_items.length}}</span>
+                </div>
+              </button>
+            </div>
+            <div class="member">
+              <a id="member_icon" href="member_sign_in.html"
+                ><i class="fas fa-user"></i
+              ></a>
+              <button id="header_logOut" @click="header_logOut">
+                <i class="fas fa-sign-out-alt"></i>
+              </button>
+            </div>
+          </div>
+        </header>
+      </div>
+      <!-- cart -->
+      <div class="side_cart cart_off">
+        <div class="cart_close">
+          <button id="cart_close" class="btn_third">
+            <i class="fas fa-reply"></i>
+          </button>
+          <span>購物車</span>
+        </div>
+        <div class="cart_course">
+          <p class="no_item" v-show="cart_items.length == 0">
+            <span>尚未添加課程，</span><br />
+            <span
+              >前去<a href="course_main.html" class="btn_second"
+                >探索課程</a
+              ></span
+            >
+          </p>
+          <ul>
+            <li class="cart_item" v-for="(item,index) in cart_items">
+              <div class="cus_card">
+                <a :href="'./course_introduce.html?ski_no=' + item.ski_no">
+                  <div class="card_img">
+                    <img :src="item.ski_img" alt="" />
+                  </div>
+                  <div class="card_content">
+                    <p>{{item.ski_name}}</p>
+                    <div class="card_content_scrb">
+                      <div class="card_content_msg">
+                        <span
+                          class="card_type"
+                          :style="'background:' + item.ind_color + ';'"
+                          >{{item.ind_class}}</span
+                        >
+                        <span class="card_price">NT${{item.ski_price}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="remove">
+                  <button @click="remove_item(index)">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="check_out_contain">
+          <div class="discount_title">
+            <p>購買兩堂課程，即享有8折優惠!</p>
+          </div>
+          <div class="price_check">
+            <ul>
+              <li><span>課程總金額:</span><span>NT${{add_total}}</span></li>
+              <li><span>折扣金額:</span><span>NT${{discount}}</span></li>
+            </ul>
+          </div>
+          <div class="price_total_btn">
+            <div class="price_total">
+              <span>總計:${{final_price}}</span>
+            </div>
+            <button class="check_out" @click="go_checkout">前往結帳</button>
+          </div>
+        </div>
+      </div>
+      <div class="order_list_wrap">
+        <div class="container">
+          <div class="course_order_list" id="course_list">
+            <div class="row">
+              <!-- 課程清單 -->
+              <div class="col-xl-7 col-lg-7">
+                <div class="cus_list">
+                  <h2>課程清單</h2>
+                  <div class="pre_list" v-show="cart_items.length == 0">
+                    <p>
+                      尚未添加課程，前去<a
+                        href="course_main.html"
+                        class="btn_second"
+                        >探索課程</a
+                      >
+                    </p>
+                  </div>
+                  <ul>
+                    <li v-for="card in cart_items">
+                      <div class="cus_card">
+                        <a
+                          :href="'./course_introduce.html?ski_no=' + card.ski_no"
+                        >
+                          <div class="card_img">
+                            <img :src="card.ski_img" alt="" />
+                          </div>
+                          <div class="card_content">
+                            <p id="ski_name">{{card.ski_name}}</p>
+                            <div class="card_content_scrb">
+                              <div class="card_content_join">
+                                <i class="fas fa-user-friends"></i
+                                ><span>{{card.ski_buy_num}}人已參與此課程</span>
+                              </div>
+                              <div class="card_content_msg">
+                                <span
+                                  class="card_type"
+                                  :style="'background:' + card.ind_color + ';'"
+                                  >{{card.ind_class}}</span
+                                >
+                                <span class="card_time"
+                                  >總計{{card.ski_time}}小時</span
+                                >
+                                <span class="card_price"
+                                  >NT${{card.ski_price}}</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="cus_total_price">
+                    <span class="total">總計:</span>
+                    <span
+                      class="final_price"
+                      style="color: black"
+                      v-if="cart_items.length<2"
+                      >NT${{final_price}}</span
+                    >
+                    <span class="final_price" v-else="cart_items.length>1"
+                      >NT${{final_price}}</span
+                    >
+                    <span class="origin_price" v-show="cart_items.length>1"
+                      >NT${{add_total}}</span
+                    >
+                    <span class="discount" v-show="cart_items.length>1"
+                      >80% off</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- 信用卡 -->
+              <div class="col-xl-5 col-lg-5">
+                <div class="check_out_contain">
+                  <div class="check_out_title">
+                    <h3>信用卡資訊</h3>
+                  </div>
+                  <div class="credit_card">
+                    <div class="flip">
+                      <div class="card_front">
+                        <div class="bank_name">
+                          <span>Bank Name</span>
+                        </div>
+                        <div class="account_num">
+                          <span> &bull; &bull; &bull; &bull;</span
+                          ><span> &bull; &bull; &bull; &bull;</span
+                          ><span> &bull; &bull; &bull;</span>
+                        </div>
+                        <div class="owner_name">
+                          <span class="credit_name">Pei-Yu,Ou Yang</span>
+                          <div class="credit_logo">
+                            <img
+                              src="img/course/svg/credit_card_front.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card_back">
+                        <div class="black_stripe"></div>
+                        <div class="white_stripe">
+                          <span>ccv</span>
+                        </div>
+                        <div class="credit_logo">
+                          <img
+                            src="img/course/svg/credit_card_front.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form">
+                    <form action="#">
+                      <div class="form_name">
+                        <label for="c_name">持卡人</label>
+                        <input
+                          type="text"
+                          id="c_name"
+                          placeholder="輸入持卡人名稱"
+                        />
+                      </div>
+                      <div class="form_account">
+                        <label for="c_account">卡號</label>
+                        <div class="account_input">
+                          <input type="text" maxlength="3" />-
+                          <input type="text" maxlength="3" />-
+                          <input type="text" maxlength="3" />-
+                          <input type="text" maxlength="3" />
+                        </div>
+                      </div>
+                      <div class="form_exp">
+                        <div class="c_exp_date">
+                          <label for="c_exp">有效日期</label>
+                          <div class="c_select">
+                            <select name="c_exp_date" v-model="this_month">
+                              <option :value="exp" v-for="exp in exp_month">
+                                {{exp}}
+                              </option>
+                            </select>
+                            <select name="c_exp_month">
+                              <option :value="exp" v-for="exp in exp_year">
+                                {{exp}}
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="c_ccv">
+                          <label for="ccv">ccv</label>
+                          <input type="password" id="ccv" maxlength="3" />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="check_out_btn">
+                    <button
+                      class="btn_primary"
+                      @click="orderListSend(cart_items)"
+                    >
+                      結帳
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- @@include('app/footer.html')  -->
+    <script src="js/course/course_vue.js"></script>
+  </body>
+</html>

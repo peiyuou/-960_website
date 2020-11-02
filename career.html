@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>行業攻略</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.8.0/echarts.js"></script>
+  <script src="https://kit.fontawesome.com/d18b20bddd.js" crossorigin="anonymous"></script>
+  @@include('app/script.html') @@include('app/link.html')
+  <link rel="stylesheet" href="./css/pages_scss/career/career_all.css" />
+</head>
+
+<body class="car_body">
+  @@include('app/header.html')
+  <main class="car_con_width container" id="car_vue">
+    <div class="col-lg-12 col-md-12 car_con_area_all">
+      <div class="col-lg-3 col-md-12 car_con_area">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 car_con_list">
+          <ul>
+            <li class="salary_rank" @click="changePlot" :class="{select_li: chooseIndustry == -1}">
+              <span></span>薪水排行
+            </li>
+            <li v-for="(item, index) in industry" @click="changeContent(index, item.backgroundColor)"
+              :class="[item.class, {select_li: chooseIndustry == index}]">
+              <span></span>{{item.typeName}}
+            </li>
+          </ul>
+          <div class="side_bar_img" v-if="screenWidth >= 992">
+            <img class="side_bar_img_use" src="./img/side_bar.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 col-md-12 col-sm-12 col-12 car_con_area">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 car_title" v-show="chooseIndustry >= 0">
+          <span class="col-lg-5 col-md-5 col-sm-12 col-12">選擇行業做比對 (請選1~2個)</span>
+          <div class="col-lg-4 col-md-4 col-sm-7 col-8">
+            <div class="choose_industry" v-for="(item, index) in sendDataTemp" v-if="item.name.length > 0">
+              <i class="far fa-times-circle" @click="removeData(index)"></i>
+              <span>{{item.name}}</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-5 col-4">
+            <button class="btn_second" v-if="sendData" @click="viewPro">
+              確認
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 car_con_pro" v-if="chooseIndustry >= 0">
+          <div class="col-md-4 col-sm-5 col-5 car_con_pro_info" v-for="(itemDetail, index) in industry[chooseIndustry].detail" @click="storeData(chooseIndustry, index)" :class="{show_border : itemDetail.isCheck}">
+            <img :src="itemDetail.src" />
+            <span>{{itemDetail.name}}</span>
+            <div class="car_con_pro_check">
+              <i class="far fa-check-circle" v-if="itemDetail.isCheck"></i>
+              <i class="far fa-times-circle" v-if="!itemDetail.isCheck"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 car_course_area" v-if="chooseIndustry >= 0">
+          <h3>相關課程</h3>
+          <div class="col-md-12 car_course_list">
+            <div class="col-md-5 col-sm-6 car_course_list_info" v-for="(item, index) in industryCourse[chooseIndustry].detail">
+              <a class="car_course_list_info_img" :href="'./course_introduce.html?ski_no=' + item.no">
+                <img :src="item.picture" />
+                <span :style="{backgroundColor:industry[chooseIndustry].backgroundColor}">{{industry[chooseIndustry].typeName}}</span>
+              </a>
+              <a :href="'./course_introduce.html?ski_no=' + item.no">
+                <p>{{item.name}}</p>
+                <span class="car_course_list_info_word"><i class="fas fa-user-friends"></i>{{item.num}}人已參與此課程</span>
+                <span class="car_course_list_info_hour">時數{{item.time}}小時</span>
+                <span class="car_course_list_info_price">NT${{item.price}}</span>
+              </a>
+            </div>
+          </div>
+          <a href="./course_main.html">
+            <button class="btn_primary">查看相關課程</button>
+          </a>
+        </div>
+        <div class="col-lg-12 col-md-12 car_forum_area" v-if="chooseIndustry >= 0">
+          <h3>相關論壇文章</h3>
+          <div class="col-md-12 car_course_list">
+            <div class="col-md-12 col-sm-12 col-12 car_forum_list_info" v-for="(item, index) in industryForum[chooseIndustry].detail" :style="{borderColor:industry[chooseIndustry].backgroundColor}">
+              <a @click="openArtPage(chooseIndustry, index)">
+                <span :style="{backgroundColor:industry[chooseIndustry].backgroundColor}">{{item.disClass}}</span>
+                <span>&ensp;{{item.name}}</span>
+              </a>
+            </div>
+          </div>
+          <a href="./forum_discuss.html">
+            <button class="btn_primary">查看相關討論</button>
+          </a>
+          <div class="mem_overlay" @click="closeArtPage">
+            <div class="mem_checkMsg" @click.stop>
+              <div class="close_btn">
+                <button type="button" class="btn_modal_close btn_third" @click="closeArtPage">返回</button>
+              </div>
+              <div class="mem_wrap">
+                <div class="mem_ove_info">
+                  <div class="mem_ove_list">
+                    <div class="mem_ove_img">
+                      <img :src="industryForumMessage.artPic" />
+                    </div>
+                    <div class="mem_ove_name">{{industryForumMessage.art}}</div>
+                    <div class="mem_ove_date">{{industryForumMessage.date}}</div>
+                  </div>
+                  <div class="mem_ove_tags">
+                    <span :style="{backgroundColor:industryForumMessage.backgroundColor}">{{industryForumMessage.indClass}}</span>
+                    <span>{{industryForumMessage.disClass}}</span>
+                  </div>
+                </div>
+                <div class="mem_ove_title">{{industryForumMessage.name}}</div>
+                <div class="mem_ove_textarea" v-for="(item, index) in industryForumMessage.content">
+                  {{item}}
+                </div>
+                <div class="mem_ove_btn">
+                  <button class="heart">
+                    <i class="fas fa-heart" :class="{'colorRed':industryForumMessage.like}"
+                      @click="$forceUpdate(), changeArticleLike(industryForumMessage)"></i>
+                  </button>
+                  <button class="gray_btn">
+                    <i class="fas fa-bookmark" :class="{'colorGray':industryForumMessage.collect}"
+                      @click="$forceUpdate(), changeCollect(industryForumMessage)"></i>
+                  </button>
+                  <button class="gray_btn">
+                    <i class="fas fa-exclamation-circle"
+                      @click="openAccuse(), repIndex = -1, repConNum = 0, repNo = industryForumMessage.no"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="mem_ove_feedback_count">
+                共{{industryForumMessage.length}}則回覆
+              </div>
+              <div class="mem_ove_feedback" v-if="industryForumMessage.length != 0">
+                <div class="mem_ove_feedback_content" v-for="(item, index) in memberArticleMessage">
+                  <div class="mem_ove_info">
+                    <div class="mem_ove_list">
+                      <div class="mem_ove_img">
+                        <img :src="item.MEM_PIC" />
+                      </div>
+                      <div class="mem_ove_name">{{item.MEM_NAME}}</div>
+                      <div class="mem_ove_date">{{item.DIS_MES_DATE}}</div>
+                    </div>
+                  </div>
+                  <div class="mem_ove_textarea">{{item.DIS_MES_CONTENT}}</div>
+                  <div class="mem_ove_btn">
+                    <button class="heart">
+                      <i class="fas fa-heart" :class="{'colorRed':item.like}"
+                        @click="$forceUpdate(), changeMessageLike(item)"></i>
+                    </button>
+                    <button class="gray_btn">
+                      <i class="fas fa-exclamation-circle"
+                        @click="openAccuse(), repIndex = -1, repConNum = 1, repNo = item.DIS_MES_NO"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="mem_ove_leave_msg">
+                <div class="mem_ove_leave_msg_content">
+                  <textarea class="send_msg" placeholder="請輸入訊息..."></textarea>
+                </div>
+                <div class="mem_ove_msg_btn">
+                  <button class="btn_primary" id="send_msg_btn"
+                    @click="$forceUpdate(), sendMessage(industryForumMessage.disNo, industryForumMessage.length)">
+                    送出
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="impeachment_overlay" :class="{'-on':accuseIsOpen}"
+            @click="accuseIsOpen = !accuseIsOpen, closeAccuse()">
+            <article @click.stop>
+              <div class="accuse_close_btn">
+                <button type="button" class="impeachment_close_btn"
+                  @click="accuseIsOpen = !accuseIsOpen, closeAccuse()">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <h3>檢舉這篇文章的原因？</h3>
+              <div class="accuse_wrap">
+                <p v-for="(item, index) in memberAccuse">
+                  <label @click="repIndex = index">
+                    <input type="radio" name="accuse" class="radio" />{{item}}
+                  </label>
+                </p>
+              </div>
+              <div class="accuse_send_btn">
+                <button class="impeachment_send_btn btn_third" @click="sendReport()">
+                  送出
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 car_con_plot_area" :class="{showPlot: showPlotControl}">
+          <h3>工作三到五年薪水排行</h3>
+          <div class="car_con_plot"></div>
+        </div>
+      </div>
+    </div>
+    <div class="bg_of_lightbx">
+      <div class="lightbx_login">
+        <div class="close_icon fas fa-times" id="closeBtn" v-on:click="btnClose"></div>
+        <img class="cutie_top" src="./img/上方探頭小人.svg" alt="" />
+        <img class="tiny_logo" src="./img/LOGO_FINAL.svg" alt="" />
+        <h2>會員登入</h2>
+        <form class="sign_in_form" action="#" v-if="signIn == true">
+          <div class="input_div">
+            <label for="account" class="input_label">帳號：</label>
+            <input type="email" placeholder="123@gmail.com" required="required" class="input_field" id="account"
+              value="123456789@gmail.com" />
+          </div>
+          <div class="input_div">
+            <label for="code" class="input_label">密碼：</label>
+            <input type="password" pattern="[a-zA-Z0-9]{10,10}" required="required" class="input_field" id="code" value="1234567890"/>
+          </div>
+          <div class="input_btn_bx">
+            <button class="btn_primary login_btn" @click.prevent="changeState()">
+              會員登入
+            </button>
+          </div>
+          <div class="go_sign_up">
+            <span>還不是會員嗎?</span><a href="./member_sign_in.html">立即註冊</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  @@include('app/footer.html')
+  <script type="text/javascript" src="./js/career/career.js"></script>
+</body>
+
+</html>

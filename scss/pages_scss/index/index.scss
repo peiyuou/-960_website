@@ -1,0 +1,814 @@
+@import '../../_public_dontTouch/utils/variables';
+@import './index_animation';
+$title: 30px;
+$opacity: 0.8;
+@font-face {
+    font-family: 'noto';
+    src: url(../../../font/GenJyuuGothicL-Normal.ttf);
+}
+
+@mixin screen {
+    // border: 1px solid red;
+    height: fit-content;
+    max-width: 1200px;
+    margin: 0 auto;
+    @content
+}
+
+;
+@mixin position($width, $position) {
+    width: $width;
+    position: $position;
+    @content
+}
+
+;
+@mixin stage($height, $position) {
+    height: $height;
+    width: 100px;
+    // border: 1px solid #000;
+    position: relative;
+    top: $position;
+}
+
+div.header_wrap {
+    position: fixed;
+    // border: 1px solid #000;
+    z-index: 99;
+    background: transparent !important;
+}
+
+@media screen and (max-width: 920px) {
+    header.header {
+        background: transparent !important;
+    }
+}
+
+.fp-viewing-1 {
+    // background-position: 0% 100%;
+    .fp-tableCell {
+        .thirdSal {
+            @include animation(third)
+        }
+        .secondSal {
+            @include animation(second);
+        }
+        .firstSal {
+            @include animation(first);
+        }
+        .stages {
+            .stageS {
+                @include animation(firstStair);
+            }
+            .stageM {
+                @include animation(secondStair);
+            }
+            .stageL {
+                @include animation(thirdStair);
+            }
+        }
+    }
+}
+
+#fp-nav ul li:hover .fp-tooltip,
+#fp-nav.fp-show-active a.active+.fp-tooltip {
+    color: black;
+    height: fit-content;
+    padding: 2px 2px;
+    font-size: 12px;
+}
+
+@media screen and (max-width:992px) {
+    #fp-nav ul li:hover .fp-tooltip,
+    #fp-nav.fp-show-active .fp-tooltip {
+        display: none;
+    }
+}
+
+.index {
+    //第一屏
+    .index_test {
+        background-image: url(../../../img/index/index_1st/1st_bg.png);
+        background-size: 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        .oneBg {
+            height: 100%;
+            background-image: url(../../../img/index/index_1st/1st_bg2.png);
+            background-size: 120%;
+            background-position: 10% 110%;
+            background-repeat: no-repeat;
+            .firstScreen {
+                .index_test_img {
+                    .title_rwd {
+                        margin-bottom: $title;
+                        text-align: center;
+                        display: none;
+                    }
+                    @media screen and (max-width:440px) {
+                        .title_rwd {
+                            display: block;
+                        }
+                    }
+                    .svg {
+                        // border: 1px solid #000;
+                        margin: 0 auto;
+                        max-width: 600px;
+                        svg {
+                            textpath {
+                                font-display: swap;
+                                font-family: 'noto';
+                            }
+                            .real {
+                                fill: $practical_color;
+                            }
+                            .inv {
+                                fill: $research_color;
+                            }
+                            .art {
+                                fill: $art_color;
+                            }
+                            .soc {
+                                fill: $social_color;
+                            }
+                            .con {
+                                fill: $thing_color;
+                            }
+                            .ent {
+                                fill: $enterprise_color;
+                            }
+                        }
+                    }
+                }
+                .index_test_text {
+                    // border: 1px solid #000;
+                    text-align: justify;
+                    height: fit-content;
+                    width: 300px;
+                    position: absolute;
+                    top: 30%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    h1 {
+                        margin-top: 10px;
+                        text-align: center;
+                    }
+                    @media screen and (max-width:440px) {
+                        h1 {
+                            display: none;
+                        }
+                    }
+                    p {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        margin: 20px 0;
+                        line-height: 30px;
+                    }
+                    .btn_primary {
+                        margin-left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                @media screen and (max-width:730px) {
+                    .index_test_text {
+                        // top: 20%;
+                        // width: 50%;
+                    }
+                }
+                @media screen and (max-width:517px) {
+                    .index_test_text {
+                        // top: 30%;
+                        .btn_primary {
+                            margin-top: 60%;
+                        }
+                    }
+                }
+                @media screen and (max-width:480px) {
+                    .index_test_text {
+                        top: 20%;
+                        width: 60%;
+                        text-align: center;
+                        .btn_primary {
+                            margin-top: 50%;
+                        }
+                    }
+                }
+                @media screen and (max-width:440px) {
+                    .index_test_text {
+                        top: 40%;
+                        .btn_primary {}
+                    }
+                }
+            }
+        }
+    }
+    //第二屏
+    .index_car {
+        background-image: url(../../../img/index/index_2nd/2nd_bg.png);
+        background-size: contain;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-color: #F4C3C5;
+        .twoBg {
+            height: 100%;
+            // border: 1px solid #000;
+            background-image: url(../../../img/index/index_2nd/2nd_bgfront.png);
+            background-position: 10% 120%;
+            background-size: 110%;
+            background-repeat: no-repeat;
+            z-index: 1;
+            .secondScreen {
+                @include screen;
+                .index_sal_img {
+                    // border: 1px solid blue;
+                    height: 545px;
+                    overflow: hidden;
+                    padding: 0;
+                    text-align: center;
+                    .thirdSal {
+                        @include position(100px, relative) {
+                            top: 160px;
+                            right: -3px;
+                            z-index: 1;
+                        }
+                    }
+                    .secondSal {
+                        @include position(100px, relative) {
+                            top: 75px;
+                            z-index: 1;
+                        }
+                    }
+                    .firstSal {
+                        @include position(100px, relative) {
+                            top: 20px;
+                            z-index: 1;
+                        }
+                    }
+                    .stages {
+                        display: flex;
+                        justify-content: center;
+                        margin: 0;
+                        // border: 1px solid #000;
+                        .stageS {
+                            @include stage(30%, 110px);
+                            .firstStage {
+                                width: 100%;
+                            }
+                            .stageInfoS {
+                                // border: 1px solid red;
+                                position: relative;
+                                bottom: 60px;
+                                left: 15px;
+                                .Stext {
+                                    // bottom: 60px;
+                                    color: darkslategray;
+                                    margin-bottom: 10px;
+                                }
+                                .Stitle {
+                                    color: darkslategray;
+                                    // position: relative;
+                                    // bottom: 55px;
+                                }
+                            }
+                        }
+                        .stageM {
+                            @include stage(65%, 55px);
+                            .secondStage {
+                                width: 100%;
+                            }
+                            .stageInfoM {
+                                position: relative;
+                                bottom: 120px;
+                                left: 15px;
+                                .Mtext {
+                                    color: darkslategray;
+                                    margin-bottom: 10px;
+                                }
+                                .Mtitle {
+                                    // position: relative;
+                                    // bottom: 60px;
+                                    color: darkslategray;
+                                }
+                            }
+                        }
+                        .stageL {
+                            @include stage(100%, 0px);
+                            .thirdStage {
+                                width: 100%;
+                            }
+                            .stageInfoL {
+                                position: relative;
+                                bottom: 160px;
+                                left: 15px;
+                                .Ltext {
+                                    color: darkslategray;
+                                    margin-bottom: 10px;
+                                }
+                                .Ltitle {
+                                    // position: relative;
+                                    // bottom: 60px;
+                                    color: darkslategray;
+                                }
+                            }
+                        }
+                    }
+                }
+                @media screen and (max-width: 991px) {
+                    .index_sal_img {
+                        position: absolute;
+                        top: 130px;
+                        height: 480px;
+                        .thirdSal {
+                            @include position(80px, relative) {
+                                right: 20px;
+                            }
+                        }
+                        .secondSal {
+                            @include position(80px, relative) {}
+                        }
+                        .firstSal {
+                            @include position(80px, relative) {
+                                left: 10px;
+                            }
+                        }
+                    }
+                }
+                .index_sal_chart {
+                    // border: 1px solid #000;
+                    background-image: url(../../../img/index/index_2nd/2nd_formbg.png), url(../../../img/index/index_2nd/2nd_formShadow.png);
+                    background-repeat: no-repeat;
+                    background-size: 80%;
+                    background-position: 50% 50%, 60% 50%;
+                    min-height: 400px;
+                    h1 {
+                        width: fit-content;
+                        margin: 0 auto;
+                        margin-top: $title;
+                    }
+                    .chart {
+                        // border: 1px solid #000;
+                        margin: 0 auto;
+                        .salGraph {
+                            // border: 1px solid #000;
+                            height: 350px;
+                            padding-top: 100px;
+                            margin: 0 auto;
+                            // width: 100%;
+                            width: 600px;
+                            position: relative;
+                            left: -10px;
+                        }
+                    }
+                    .btn_second {
+                        margin-left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                @media screen and (max-width: 991px) {
+                    .index_sal_chart {
+                        h1 {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                        }
+                        background-image: unset;
+                        .chart {
+                            display: none;
+                            canvas {
+                                display: none;
+                            }
+                        }
+                        .btn_second {
+                            margin-top: 470px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //第三屏
+    .index_disc {
+        background-color: #F7EA92;
+        background-image: url(../../../img/index/index_3rd/3rd_bg.png);
+        background-size: 120%;
+        background-position: top;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        .threeBg {
+            height: 100%;
+            background-image: url(../../../img/index/index_3rd/3rd_bgfront.png);
+            background-size: 130%;
+            background-position: 10% 110%;
+            background-attachment: scroll;
+            background-repeat: no-repeat;
+            .thirdScreen {
+                @include screen;
+                .index_disc_text {
+                    h1 {
+                        margin-bottom: $title;
+                    }
+                    .index_dia {
+                        .message {
+                            // border: 1px solid #000;
+                            border-radius: 10px;
+                            padding: 10px;
+                            position: relative;
+                            background-color: white;
+                            margin-bottom: 40px;
+                            // z-index: 2;
+                            .meg_box {
+                                border: 1px solid #000;
+                                border-radius: 5px;
+                                margin-bottom: 15px;
+                                box-shadow: $card_shadow;
+                                z-index: 2;
+                                a {
+                                    width: 100%;
+                                    padding: 10px;
+                                    h5 {
+                                        display: inline-block;
+                                        width: 300px;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        white-space: nowrap;
+                                    }
+                                    i {
+                                        float: right;
+                                        margin-left: 10px;
+                                    }
+                                    hr {
+                                        width: 98%;
+                                        color: lightgrey;
+                                    }
+                                    .megBelow {
+                                        display: flex;
+                                        margin-left: 5px;
+                                        .member {
+                                            font-size: 14px;
+                                            line-height: 10px;
+                                            font-weight: bold;
+                                            margin-right: 10px;
+                                        }
+                                        .date {
+                                            font-size: 12px;
+                                            line-height: 10px;
+                                            color: rgb(42, 169, 219);
+                                        }
+                                    }
+                                }
+                            }
+                            &::after {
+                                content: "";
+                                // border: 1px solid #000;
+                                width: 120px;
+                                height: 90px;
+                                position: absolute;
+                                top: 10px;
+                                right: -100px;
+                                // z-index: 1;
+                            }
+                        }
+                        .btn_second {
+                            margin-left: 50%;
+                            transform: translateX(-50%);
+                        }
+                    }
+                }
+                .index_disc_img {
+                    .img {
+                        // border: 1px solid #000;
+                        // width: 100%;
+                        height: 100%;
+                        background-image: url(../../../img/index/index_3rd/3rd_conversation.png), url(../../../img/index/index_3rd/3rd_conversationShadow.png);
+                        background-size: contain;
+                        background-position: 50% 30%, 80% 30%;
+                        background-repeat: no-repeat;
+                        .dia_img {
+                            margin-bottom: 20%;
+                            margin-top: 30%;
+                            margin-left: 10%;
+                            width: 80%;
+                        }
+                    }
+                }
+                @media screen and (max-width:767px) {
+                    .index_disc_img {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    //第四屏
+    .index_cour {
+        background-image: url(../../../img/index/index_4th/4th_bg.png);
+        background-size: contain;
+        background-position: top;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-color: #79BBB5;
+        .fourBg {
+            height: 100%;
+            background-image: url(../../../img/index/index_4th/4th_frontbg.png);
+            background-repeat: no-repeat;
+            background-size: 120%;
+            background-position: 15% 120%;
+            .forthScreen {
+                // border: 1px solid #000;
+                @include screen;
+                .index_cour_text {
+                    // border: 1px solid red;
+                    h1 {
+                        margin-top: $title;
+                        margin-bottom: 20px;
+                    }
+                    .courseMain {
+                        // border: 1px solid #000;
+                        width: 100%;
+                        text-align: center;
+                        padding-bottom: 10px;
+                        .pad {
+                            // border: 1px solid #000;
+                            width: 70%;
+                            min-width: 375px;
+                            position: relative;
+                            display: inline-block;
+                            vertical-align: bottom;
+                            &::before {
+                                content: "";
+                                // border: 1px solid #000;
+                                position: absolute;
+                                left: -48px;
+                                bottom: 0;
+                                background-image: url(../../../img/index/index_4th/leftboy.png);
+                                background-repeat: no-repeat;
+                                width: 80px;
+                                height: 350px;
+                            }
+                            .screen_bg {
+                                background-color: #C3C3C4;
+                                border-top-left-radius: 50px;
+                                border-top-right-radius: 50px;
+                                height: 430px;
+                                padding: 30px;
+                                box-shadow: $card_shadow;
+                                .screen {
+                                    background-color: #fff;
+                                    height: 350px;
+                                    margin-top: 10px;
+                                    border-radius: 20px;
+                                    overflow: hidden;
+                                    .screen_carousel {
+                                        height: 300px;
+                                        margin-top: 25px;
+                                        // border: 1px solid #000;
+                                        .item {
+                                            display: inline-block;
+                                            // border: 1px solid #E8E8E8;
+                                            background: #fff;
+                                            flex: 1;
+                                            margin: 10px 15px;
+                                            box-shadow: $card_shadow;
+                                            border-radius: $card_radius;
+                                            overflow: hidden;
+                                            .course_img {
+                                                position: relative;
+                                                // border: 1px solid #E8E8E8;
+                                                img {
+                                                    width: 100%;
+                                                }
+                                                .typeTag {
+                                                    display: inline-block;
+                                                    padding: 5px;
+                                                    position: absolute;
+                                                    top: 0px;
+                                                    left: 0px;
+                                                    border-radius: 5px;
+                                                    box-shadow: $card_shadow;
+                                                }
+                                            }
+                                            .course_text {
+                                                padding: 30px 10px 20px;
+                                                text-align: start;
+                                                .courseTitle {
+                                                    font-size: 18px;
+                                                    font-weight: bold;
+                                                    margin-bottom: 10px;
+                                                }
+                                                i {
+                                                    margin-right: 5px;
+                                                }
+                                                span {
+                                                    font-size: 13px;
+                                                }
+                                                .courseInfo {
+                                                    margin-top: 10px;
+                                                    margin-left: auto;
+                                                    display: flex;
+                                                    text-align: left;
+                                                    // justify-content: space-around;
+                                                    .courseHour {
+                                                        font-size: 16px;
+                                                    }
+                                                    .courseCost {
+                                                        font-size: 18px;
+                                                        font-weight: bold;
+                                                        margin-left: 20px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .screen_bt {
+                                background-color: #E8E8E8;
+                                border-bottom-left-radius: 50px;
+                                border-bottom-right-radius: 50px;
+                                height: 50px;
+                                box-shadow: $card_shadow;
+                                .btn_second {
+                                    display: block;
+                                    margin: 0 auto;
+                                    // margin-top: 10px;
+                                }
+                            }
+                        }
+                        @media screen and (max-width:767px) {
+                            .pad {
+                                &::before {
+                                    width: 0px;
+                                }
+                                .screen_bg {
+                                    .screen {
+                                        .screen_carousel {
+                                            margin-top: 0px;
+                                            .item {
+                                                margin-top: 10px;
+                                                .img {
+                                                    width: 50%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .stairBoy {
+                            display: inline-block;
+                            position: relative;
+                            // border: 1px solid #000;
+                            .stair {}
+                            .boys {
+                                // border: 1px solid #000;
+                                position: absolute;
+                                top: 0;
+                                left: 20px;
+                                .upBoy {
+                                    width: 75px;
+                                    opacity: 0;
+                                    @include animation(stairUp, infinite, 2s, linear) {}
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                                .btBoy {
+                                    width: 80px;
+                                    // border: 1px solid #000;
+                                    margin-top: 35px;
+                                    opacity: 1;
+                                    @include animation(stairDown, infinite, 2s, linear) {}
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                        @media screen and (max-width:639px) {
+                            .stairBoy {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //第五屏
+    .index_card {
+        background-image: url(../../../img/index/index_5th/5th_bg.png);
+        background-size: contain;
+        background-position: top;
+        background-attachment: fixed;
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-color: #A0CADB;
+        .fiveBg {
+            height: 100%;
+            background-image: url(../../../img/index/index_5th/5th_frontbg.png);
+            background-repeat: no-repeat;
+            background-position: 20% 100%;
+            .fifthScreen {
+                // border: 1px solid blue;
+                @include screen;
+                h1 {
+                    margin-top: 50px;
+                    margin-bottom: 10px;
+                }
+                .index_card_img {
+                    #img {
+                        // border: 1px solid #000;
+                        .cards {
+                            transform: rotate(-3deg);
+                            .line {
+                                border: 1px solid rgb(41, 41, 41);
+                                width: 95%;
+                                margin: 0 auto;
+                                margin-top: 5%;
+                            }
+                            .allCard {
+                                display: flex;
+                                // border: 1px solid blue;
+                                margin-bottom: 5%;
+                                .card {
+                                    // width: 100% !important;
+                                    height: 300px;
+                                    margin: 0 5%;
+                                    position: relative;
+                                    bottom: 35px;
+                                    &::before {
+                                        // border: 1px solid red;
+                                        content: '';
+                                        background-image: url(../../../img/index/index_5th/clip.png);
+                                        background-size: contain;
+                                        background-repeat: no-repeat;
+                                        height: 20%;
+                                        width: 5%;
+                                        display: block;
+                                        position: relative;
+                                        top: 10px;
+                                        left: 130px;
+                                        z-index: 2;
+                                    }
+                                    .postCard {
+                                        width: 70%;
+                                        transform: rotate(3deg);
+                                        z-index: 1;
+                                    }
+                                    // @media screen and (max-width:787px) {
+                                    //     .postCard {
+                                    //         width: 80%;
+                                    //     }
+                                    // }
+                                }
+                            }
+                            .allCard_rwd {
+                                display: none;
+                            }
+                            .allCard_small {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .index_card_text {
+                    // border: 1px solid #000;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 15%;
+                    width: fit-content;
+                    .postText {
+                        // border: 1px solid pink;
+                        line-height: 20px;
+                        width: fit-content;
+                        margin: 0 auto;
+                        font-size: 18px;
+                        color: white;
+                        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+                    }
+                    .btn_second {
+                        margin: 20px 0;
+                        margin-left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                @media screen and (max-width:991px) {
+                    .index_card_text {
+                        bottom: 40px;
+                    }
+                }
+                @media screen and (max-width:787px) {
+                    .index_card_text {
+                        position: static;
+                        margin: 5% auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.index .index_card .fiveBg .fifthScreen .index_card_img #img .cards .slick-initialized .slick-slide {
+    width: 300px;
+}

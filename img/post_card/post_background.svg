@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1235" viewBox="0 0 1920 1235">
+  <defs>
+    <filter id="Path_1937" x="-104.379" y="-330.721" width="1948.848" height="1914.886" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-post_background">
+      <rect width="1920" height="1235"/>
+    </clipPath>
+  </defs>
+  <g id="post_background" clip-path="url(#clip-post_background)">
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_1937)">
+      <path id="Path_1937-2" data-name="Path 1937" d="M392.573,215.224C761.778,54.205,1434.56,242.348,1434.56,599.645S1264.008,1208.539,800.6,1169.535c-203.9-17.162-683.527,338.056-842.86,74.187S23.368,376.243,392.573,215.224Z" transform="translate(884.23 1628.94) rotate(-139)" fill="#bceaff"/>
+    </g>
+  </g>
+</svg>

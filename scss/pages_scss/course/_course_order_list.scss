@@ -1,0 +1,292 @@
+@import "../../_public_dontTouch/utils/variables";
+$cus_card_img_width: 200px;
+div.order_list_wrap {
+  background: url(../../../img/course/bg/order_list.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div.course_order_list {
+  padding: 50px;
+  // width: 100%;
+  border: none;
+  div.cus_list {
+    border: none;
+    h2 {
+      width: 300px;
+      border-bottom: 2px solid #e8c300;
+      padding-bottom: 10px;
+      margin: 0px 0 20px;
+    }
+    div.pre_list {
+      padding: 100px;
+      a {
+        margin-left: 10px;
+      }
+    }
+    ul {
+    }
+    div.cus_total_price {
+      // border: $outline2;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding-top: 50px;
+      span {
+        display: inline-block;
+        padding: 0 5px;
+      }
+      span.total {
+        font-size: 15px;
+        margin-right: 10px;
+      }
+      span.final_price {
+        font-size: 26px;
+        font-weight: bold;
+        color: red;
+      }
+      span.origin_price {
+        font-size: 15px;
+        text-decoration: line-through;
+      }
+      span.discount {
+        font-size: 15px;
+      }
+    }
+  }
+  div.check_out_contain {
+    color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    background: rgba(123, 159, 180, 0.76);
+    border-radius: 10px;
+    padding: 0px 20px 30px;
+    div.check_out_title {
+      h3 {
+        padding: 30px 0 40px;
+      }
+    }
+    div.credit_card {
+      position: relative;
+      perspective: 1000;
+      @mixin credit_card {
+        width: 300px;
+        height: 200px;
+        background: linear-gradient(135deg, #3c5e92, #1b2c4b);
+        border-radius: 15px;
+        position: absolute;
+        color: #ccc;
+        top: 0;
+        left: 0;
+        text-shadow: 0 1px 1px black;
+        box-shadow: 0 5px 15px rgb(72, 104, 134);
+        padding: 5px 15px;
+      }
+      div.flip {
+        // width: 100%;
+        width: 300px;
+        height: 200px;
+        transition: 0.6s ease-in-out;
+        transform-style: preserve-3d;
+        position: relative;
+        margin: 0 auto;
+        &:hover {
+          transform-origin: center;
+          transform: rotateY(180deg);
+          transform-origin: center;
+        }
+        div.card_front {
+          @include credit_card();
+          z-index: 2;
+          transform: rotate(0deg);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          div.account_num {
+            text-align: center;
+            transform: translateY(30px);
+            span {
+              padding: 0 10px;
+              font-size: 20px;
+            }
+          }
+          div.owner_name {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            div.credit_logo {
+              width: 80px;
+              transform: translateY(30px);
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+        div.card_back {
+          @include credit_card();
+          // background: orange;
+          z-index: 5;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transform: rotateY(180deg);
+          div.black_stripe {
+            height: 40px;
+            background: linear-gradient(
+              135deg,
+              rgba(0, 0, 0, 0.575),
+              rgba(0, 0, 0, 0.788)
+            );
+            // background: rgba(0, 0, 0, 0.788);
+            width: 100%;
+            margin: 30px 0 10px 0;
+          }
+          div.white_stripe {
+            background: #fff;
+            border-radius: 5px;
+            margin: 0 15px;
+            height: 30px;
+            span {
+              display: inline-block;
+              width: 100%;
+              text-align: right;
+              padding: 5px 10px 0;
+            }
+          }
+          div.credit_logo {
+            width: 80px;
+            // border: $outline4;
+            align-self: flex-end;
+            margin-top: 10px;
+            margin-right: 15px;
+            transform: translateY(10px);
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    @mixin form_layout {
+      border: 1px solid #fff;
+      padding: 10px;
+      margin: 20px 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    @mixin form_input {
+      background: rgb(196, 217, 228);
+      outline: none;
+      border: none; // border: 1px solid rgba(123, 159, 180, 0.452);
+      padding: 5px;
+      border-radius: 5px;
+    }
+    div.form {
+      margin-top: 50px;
+      form {
+        div.form_name {
+          @include form_layout();
+          label {
+            padding-bottom: 10px;
+          }
+          input {
+            @include form_input();
+          }
+        }
+        div.form_account {
+          @include form_layout();
+          label {
+            padding-bottom: 10px;
+          }
+          div.account_input {
+            display: flex;
+            align-items: center;
+            input {
+              @include form_input();
+              width: 20%;
+              margin: 0 10px;
+              &:first-child {
+                margin-left: 0;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+        div.form_exp {
+          @include form_layout();
+          flex-direction: row;
+          div.c_exp_date {
+            div.c_select {
+              margin-top: 10px;
+              display: flex;
+              select {
+                @include form_input();
+                margin-right: 30px;
+              }
+            }
+          }
+          div.c_ccv {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+            input {
+              margin-top: 10px;
+              @include form_input();
+              width: 50px;
+            }
+          }
+        }
+      }
+    }
+    div.check_out_btn {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 1180px) {
+  div.course_order_list div.check_out_contain {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  div.course_order_list div.check_out_contain {
+    margin-top: 50px;
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  div.course_order_list div.cus_card {
+    a {
+      flex-direction: column;
+      div.card_img {
+        width: 100%;
+      }
+      div.card_content {
+        padding: 20px;
+        p {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  div.course_order_list div.check_out_contain {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  div.course_order_list {
+    padding: 30px 0;
+  }
+}

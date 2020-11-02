@@ -1,0 +1,146 @@
+div.side_cart {
+    // border: $outline2;
+    width: 400px;
+    // height: 100vh;
+    height: calc(100vh - 70px);
+    // background: rgba(255, 255, 255, 0.9);
+    background: $second_color2;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 300;
+    transition: 0.6s ease-in-out;
+    padding: 10 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 3px solid $second_color1;
+    border-radius: 10px 0 0 10px;
+    div.cart_close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 15px 10px;
+        span {
+            font-size: 20px;
+            font-weight: bold;
+            align-self: flex-end;
+        }
+        button {
+            width: 50px;
+            height: 30px;
+            line-height: 0;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+        }
+    }
+    div.cart_course {
+        margin: 0 10px;
+        overflow-y: scroll;
+        height: 100%;
+        p.no_item {
+            text-align: center;
+            transform: translateY(150px);
+            span {
+                display: inline-block;
+                margin-bottom: 15px;
+                a {
+                    display: inline-block;
+                    margin-left: 10px;
+                }
+            }
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+            // border: $outline1;
+            li {
+                box-shadow: $card_shadow;
+                background: #fff;
+                margin: 10px 0;
+                div.cus_card {
+                    display: flex;
+                    // position: relative;
+                    a {
+                        border-bottom: 0;
+                        flex: 1;
+                        div.card_img {
+                            width: 120px;
+                        }
+                    }
+                    div.remove {
+                        button {
+                            background: #e8c300;
+                            width: 100%;
+                            height: 100%;
+                            font-size: 18px;
+                            &:hover {
+                                background: #fcda27;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    div.cart_course::-webkit-scrollbar {
+        display: none;
+    }
+    div.check_out_contain {
+        background: $second_color2;
+        div.discount_title {
+            background: $second_color1;
+            p {
+                padding: 5px;
+            }
+        }
+        div.price_check {
+            // background: #fff;
+            ul {
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    span {
+                        padding: 10px 5px;
+                    }
+                }
+            }
+        }
+        div.price_total_btn {
+            border-top: 1px soild #ededed;
+            display: flex;
+            align-items: center;
+            // background: #ededed;
+            border-top: 1px solid #ededed;
+            // background: #fff;
+            div.price_total {
+                flex-grow: 2;
+                text-align: center;
+            }
+            button.check_out {
+                flex-grow: 1;
+                background: #1b4d9f;
+                font-size: 18px;
+                color: #fff;
+                padding: 10px 0;
+                text-align: center;
+                &:hover {
+                    background: #336ac6;
+                }
+            }
+        }
+    }
+}
+
+.cart_off {
+    transform: translateX(100%);
+}
+
+@media (max-width: 400px) {
+    div.side_cart {
+        width: 100%;
+    }
+}

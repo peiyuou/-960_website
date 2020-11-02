@@ -1,0 +1,30 @@
+@media screen and (min-width:768px){
+    .car_pro_con_area{
+        h3, div.car_pro_ski_mar{
+            margin: 0 10px;
+            max-width: calc(100% - 20px);
+        }
+        h3.col-lg-9{
+            max-width: calc(75% - 20px);
+        }
+    }
+}
+@media screen and (max-width:768px){
+    .car_pro_con{
+        > .car_pro_con_area{
+            padding: 0;
+        }
+    }
+    .car_pro_con_pad{
+        padding-top: 0 !important;
+    }
+    .car_pro_con_area{
+        h3, ul, div.car_pro_ski_mar{
+            margin: 0 5px !important;
+            max-width: calc(100% - 10px) !important;
+        }
+    }
+    .car_pro_con_mar{
+        margin: 5px 0 !important;
+    }
+}

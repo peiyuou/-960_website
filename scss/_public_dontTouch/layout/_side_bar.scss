@@ -1,0 +1,185 @@
+@import "../../_public_dontTouch/utils/variables";
+div.main_side_bar {
+    width: 200px;
+    height: 100vh;
+    background: $second_color2;
+    // margin-left: 20px;
+    // border-radius: 20px;
+    padding: 0px 20px 0;
+    position: fixed;
+    ul {
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        li {
+            // background: pink;
+            margin: 10px 0;
+            a {
+                // border: 2px solid black;
+                border-radius: 50px;
+                padding: 5px 30px;
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                span {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    background: blue;
+                    border-radius: 50px;
+                    margin-right: 10px;
+                }
+            }
+            @mixin main_side_bar_color($color) {
+                a {
+                    border: 2px solid $color;
+                    span {
+                        background: $color;
+                    }
+                    &:hover {
+                        background: $color;
+                        span {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+            &:first-child {
+                @include main_side_bar_color($practical_color);
+                a.point0.side_click {
+                    background: $practical_color;
+                    span {
+                        background: #fff;
+                    }
+                }
+            }
+            &:nth-child(2) {
+                @include main_side_bar_color($research_color);
+                a.point1.side_click {
+                    background: $research_color;
+                    span {
+                        background: #fff;
+                    }
+                }
+            }
+            &:nth-child(3) {
+                @include main_side_bar_color($art_color);
+                a.point2.side_click {
+                    background: $art_color;
+                    span {
+                        background: #fff;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                @include main_side_bar_color($social_color);
+                a.point3.side_click {
+                    background: $social_color;
+                    span {
+                        background: #fff;
+                    }
+                }
+            }
+            &:nth-child(5) {
+                @include main_side_bar_color($enterprise_color);
+                a.point4.side_click {
+                    background: $enterprise_color;
+                    span {
+                        background: #fff;
+                    }
+                }
+            }
+            &:nth-child(6) {
+                @include main_side_bar_color($thing_color);
+                a.point5.side_click {
+                    background: $thing_color;
+                    span {
+                        background: #fff;
+                    }
+                }
+            }
+        }
+    }
+    div.side_bar_img {
+        width: 140%;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// @import "../utils/variables";
+// .main_side_bar {
+//     width: 200px;
+//     height: 100vh;
+//     background: $second_color2;
+//     padding: 0px 20px 0;
+//     ul {
+//         margin-bottom: 30px;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         li {
+//             margin: 10px 0;
+//             a {
+//                 border: 2px solid black;
+//                 border-radius: 50px;
+//                 padding: 5px 30px;
+//                 display: flex;
+//                 align-items: center;
+//                 font-size: 18px;
+//                 span {
+//                     display: inline-block;
+//                     width: 20px;
+//                     height: 20px;
+//                     background: blue;
+//                     border-radius: 50px;
+//                     margin-right: 10px;
+//                 }
+//             }
+//             @mixin main_side_bar_color($color) {
+//                 border: 2px solid $color;
+//                 span {
+//                     background: $color;
+//                 }
+//                 &:hover {
+//                     background: $color;
+//                     span {
+//                         background: #fff;
+//                     }
+//                 }
+//             }
+//             &:first-child {
+//                 a {
+//                     @include main_side_bar_color($practical_color);
+//                 }
+//             }
+//             &:nth-child(2) {
+//                 a {
+//                     @include main_side_bar_color($research_color);
+//                 }
+//             }
+//             &:nth-child(3) {
+//                 a {
+//                     @include main_side_bar_color($art_color);
+//                 }
+//             }
+//             &:nth-child(4) {
+//                 a {
+//                     @include main_side_bar_color($social_color);
+//                 }
+//             }
+//             &:nth-child(5) {
+//                 a {
+//                     @include main_side_bar_color($enterprise_color);
+//                 }
+//             }
+//             &:nth-child(6) {
+//                 a {
+//                     @include main_side_bar_color($thing_color);
+//                 }
+//             }
+//         }
+//     }
+// }

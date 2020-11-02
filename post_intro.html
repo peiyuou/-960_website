@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>職引960客製明信片</title>
+  @@include('app/link.html')
+  <link rel="stylesheet" href="./css/pages_scss/post_card/post_card.css" />
+  @@include('app/script.html')
+</head>
+
+<body class="intro_bg">
+  <!-- header -->
+  @@include('app/header.html')
+  <!-- header 結束-->
+  <div class="post_intro container">
+    <div class="post_ani row">
+      <div class="move col-sm-11">
+        <div class="main_pic">
+          <div class="envelope open">
+            <div class="flap front"></div>
+            <div class="flap top"></div>
+            <div class="letter">
+              <img src="./img/post_card/postCard.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="buttons col-sm-8">
+          <button class="btn_third" id="how">如何製作</button>
+          <a href="post_front.html" class="btn_primary"> 開始客製 </a>
+        </div>
+      </div>
+      <div class="steps row">
+        <div class="step1 col-sm-3">
+          <p>第一步</p>
+          <img src="./img/post_card/step1.png" alt="" />
+          <p class="p_small">選擇正面版型及外框</p>
+        </div>
+        <i class="fas fa-arrow-right"></i>
+        <div class="step2 col-sm-3">
+          <p>第二步</p>
+          <img src="./img/post_card/step2.png" alt="" />
+          <p class="p_small">選擇郵戳並可拖曳郵票位置</p>
+        </div>
+        <i class="fas fa-arrow-right"></i>
+        <div class="step3 col-sm-3">
+          <p>第三步</p>
+          <img src="./img/post_card/step3.png" alt="" />
+          <p class="p_small">選擇要收到明信片的日期</p>
+        </div>
+        <i class="fas fa-arrow-right"></i>
+        <p class="mas">寄出當天發<br />訊息通知查看</p>
+      </div>
+    </div>
+  </div>
+  @@include('app/footer.html')
+
+  <script src="./js/post_card/post_how.js"></script>
+</body>
+
+</html>

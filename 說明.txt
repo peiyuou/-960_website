@@ -1,0 +1,87 @@
+https://medium.com/%E4%BC%81%E9%B5%9D%E4%B9%9F%E6%87%82%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/vue%E5%B0%88%E6%A1%88%E4%B8%AD%E7%9A%84css%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5-%E5%88%A9%E7%94%A8scss%E5%B0%87%E6%A8%A3%E5%BC%8F%E6%A8%A1%E7%B5%84%E5%8C%96-47c1d337c5fd
+
+每新增頁面的步驟
+ex: 新增index.html時
+
+
+
+--!注意事項!--
+1.html請添加 <link rel="stylesheet" href="css/app.css">
+2.針對有重複的字型/顏色盡量使用變數ex: 
+    $course_title_size: 30px;
+    $course_title_color: blue;
+2.若有添加scss檔案，請記得import到app.scss內
+3.盡量依照分類打scss，若對分類有不清楚請看下方說明
+  或是詢問歐陽，甘溫!!
+
+
+
+
+
+
+base：網站基本的樣式設定
+
+├───base
+│   ├───_basic.scss // 網站基本設定，如font-family等
+│   ├───_float.scss // 自定義的float相關樣式
+│   ...
+
+
+components：組件相關的樣式
+
+├───components
+│   ├───_header.scss
+│   ├───_footer.scss
+│   ...
+
+layout：整體layout上的設定，如rwd的文件
+
+├───layout
+│   ├───_rwd.scss
+│   ...
+
+pages：views相關的樣式
+
+├───pages
+│   ├───_index.scss
+│   ├───_userInfo.scss
+│   ├───_userSetting.scss
+│   ...
+
+theme：------------
+
+utils：能幫助建構樣式的scss檔案。如變數(variable)、樣式方法(function)等
+
+├───utils
+│   ├───_function.scss
+│   ├───_mixin.scss
+│   └───_variables.scss
+
+vendors：放外部提供者的css檔，而非自己寫的，都可以放在這裡
+
+├───vendors
+│   ├───_animated.scss
+│   ├───_material-icon.css
+│   ├───_font-awesome.css
+│   ...
+
+vendors-extensions：有時外部提供的css，有會有覆蓋重新設計的需求，就將這些檔案放在這裡
+
+├───vendors-extensions
+│   ├───_element-ui.scss
+│   ...
+
+
+base目录存放引用内容。它存放着网站每个网页都应该接受的样式。
+
+components目录存放所有小的布局文件。样式所需要的按钮、导航和类似的文章组件。
+
+大的布局文件则应该放在layouts目录下。主要部分的布局样式，比如说头部、尾部或者表格系统样式则应该属于这个目录。
+
+如果网站中有些独立的页面有特殊样式，你可以将他们放在pages目录中。举个常见的例子，网站主页会引用而其他页面不接受的特定样式。
+
+themes目录存放项目特定主题的样式文件。比如，网站一部分会使用三原色的配色，而另一部分则使用的是基于非色彩的土色调。
+
+helper或者utils目录存放Sass工具，帮助文件，变量以及配置文件。这些文件将不会被编译。
+
+最后vendors目录存放第三方代码，main.css文件使用@import语句包含其他的文件。

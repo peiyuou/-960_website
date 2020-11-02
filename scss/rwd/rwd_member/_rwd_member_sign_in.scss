@@ -1,0 +1,33 @@
+@media screen and (max-width:1073px){
+    img.mem_log_fir{
+        width: 80px !important;
+        height: 100px !important;
+        position: absolute;
+        top: 50px;
+        right: -51px !important;
+    }
+}
+@media screen and (max-width:640px){
+    .mem_log_con_width{
+        margin: 0 auto !important;
+        width: 320px;
+        min-width: 320px;
+        .mem_log_content{
+            width: 320px;
+            min-width: 320px;
+            .common_set{
+                display: none;
+            }
+            div.sign_in{
+                left: 0%;
+            }
+        }
+        .rwd_btn{
+            display: block !important;
+        }
+        // button {
+        //     width: 50% !important;
+        //     border-radius: 0px !important;
+        // }
+    }
+}

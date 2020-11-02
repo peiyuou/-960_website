@@ -1,0 +1,236 @@
+@import'../../_public_dontTouch/utils/variables';
+@import'../../_public_dontTouch/utils/mixin';
+
+div.header_wrap header.header div.header_nav ul li:nth-child(5) a::after {
+  @include header_line;
+}
+
+.postcard_view {
+
+  max-width: 1200px;
+  margin: 50px auto;
+  // height: calc(100vh - 128px);
+  // border: 1px solid black;
+  min-height: calc(100vh - 305px);
+
+
+  .select_date {
+    // border: 1px solid blue;
+
+    .date {
+      // border: 1px solid black;
+
+
+      h3 {
+        // border: 1px solid red;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      input {
+        margin-left: 6px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        display: inline-block;
+        font-size: 16px;
+        padding: 2px 5px;
+        width: 120px;
+        border: 1px solid #6b6b6b;
+        vertical-align: top;
+        // color: #6b6b6b;
+      }
+
+    }
+  }
+
+  .view {
+    margin-top: 20px;
+
+
+    .view_front {
+      // border: 1px solid black;
+
+      p {
+        padding-bottom: 20px;
+      }
+
+      img {
+        width: 100%;
+        // border: 1px solid black;
+
+      }
+    }
+
+    .view_back {
+      // border: 1px solid black;
+
+      p {
+        padding-bottom: 20px;
+
+      }
+
+      img {
+        width: 100%;
+        // border: 1px solid black;
+
+      }
+    }
+
+    .send_date {
+      // border: 1px solid pink;
+      float: right;
+      padding: 0;
+      margin: 20px;
+
+      div {
+        margin: 0 auto;
+        padding: 0;
+        // border: 1px solid blue;
+        display: flex;
+        justify-content: space-between;
+        float: right;
+      }
+    }
+
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .5);
+    /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s;
+
+    &.-on {
+
+      /* 加上 -on 之後，Modal 漸漸出現，因為有設定 transition */
+      opacity: 1;
+      z-index: 200;
+    }
+
+    &.-opacity-zero {
+      /* 關閉 Modal 時，先讓 opacity設定0，就會慢慢變成完全透明，但這時會擋到後面的元素，所以要再移除 -on 及 -opacity-zero 這兩個 class */
+      opacity: 0;
+    }
+
+    .pop {
+      // border: 1px solid red;
+      background-color: white;
+      width: 320px;
+      height: 150px;
+      border-radius: 15px;
+      text-align: center;
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: $card_shadow;
+      ;
+
+      .close {
+        // border: 1px solid rgb(71, 131, 98);
+        cursor: pointer;
+        float: right;
+
+        &::after {
+          // 沒有用
+          contain: "aaa";
+          display: block;
+          clear: both;
+          font-size: 16px;
+
+        }
+
+
+        i {
+          font-size: 26px;
+          color: rgb(71, 71, 71);
+          // border: 1px solid rgb(14, 29, 20);
+          // float: right;
+          padding: 5px 8px;
+
+          &:hover {
+            color: black;
+
+          }
+        }
+
+
+
+      }
+
+
+
+      .when {
+        // border: 1px solid orange;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 55px;
+        // height: 100px;
+
+        .when_date {
+          // border: 1px solid rgb(30, 61, 240);
+          // margin-top: 50px;
+          padding: 10px;
+        }
+
+        .p_small {
+          // border: 1px solid rgb(73, 213, 231);
+          margin-top: 20px;
+          padding: 5px;
+          color: #6b6b6b;
+
+        }
+      }
+    }
+  }
+}
+
+/*
+日曆css
+  1. Add this stylesheet to the <head> of your pages
+     <link href="YOUR PATH/calendar.css" rel="stylesheet" type="text/css" />
+     
+  2. Use the file name as data-dd-theme attribute on your datedropper elements
+     <input data-dd-theme="calendar" />
+     
+*/
+
+
+div.datedropper.calendar {
+
+  --dd-color1: #1B4D9F;
+  --dd-color2: #FFF;
+  --dd-color3: #4D4D4D;
+  --dd-color4: #FFF;
+
+  --dd-radius: 16px;
+  --dd-width: 200px;
+  --dd-shadow: 0 0 21px 2px rgba(0, 0, 0, 0.14);
+  font-family: 微軟正黑體;
+
+
+}
+
+div.datedropper .picker ul.pick li span {
+  bottom: 10px !important;
+}
+
+@media(max-width:767px) {
+  .postcard_view {
+    margin: 20px auto;
+
+    .view_back {
+      margin-top: 20px;
+    }
+  }
+
+}

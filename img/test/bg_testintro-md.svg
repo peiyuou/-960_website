@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="980" height="309" viewBox="0 0 980 309">
+  <defs>
+    <filter id="Path_6934" x="-1060.811" y="-57" width="2238.302" height="373.294" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-bg_testintro-md">
+      <rect width="980" height="309"/>
+    </clipPath>
+  </defs>
+  <g id="bg_testintro-md" clip-path="url(#clip-bg_testintro-md)">
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_6934)">
+      <path id="Path_6934-2" data-name="Path 6934" d="M-7224.755-1823l2201.247-31s-7.511,332.724-227.82,237.628-156.713,95.1-305.672,95.1-183.23-154.965-331.146-45.6-277.552,15.266-332.493-49.5-88.682-149.675-148.5-168.134-25.811,94.751-94.186,150.51c-169.241,138.014-278.846,112.471-369.533,47.24-187.369-134.775-207.639,117.445-329.625,43.95-31.229-18.815-50.63-45.538-62.275-75.043C-7227.128-1678.806-7224.755-1823-7224.755-1823Z" transform="translate(6183 1812)" fill="#f6f3ed"/>
+    </g>
+  </g>
+</svg>

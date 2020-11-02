@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職引960</title>
+    @@include('app/link.html')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.css">
+    <link rel="stylesheet" href="./css/pages_scss/index/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" /> @@include('app/script.html')
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/vendors/easings.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.8.0/echarts.min.js" integrity="sha512-OvWfXEXFlgwaMYESoKZRrPGq9Ndjcf7pMgp+NjbUNeqEA1OOOUbLgquJGOzvh7H78qinNObGwRiFIj22es61Eg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    @@include('app/header.html')
+
+    <main class="index fullpage frontpage">
+        <!-- firstScreen -->
+        <section class="index_test active">
+            <div class="oneBg container-fluid">
+                <div class="firstScreen row">
+                    <div class="index_test_img col-12">
+                        <h1 class="title_rwd">職涯分析</h1>
+                        <div class="svg ">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 360 360" xml:space="preserve">
+                                <circle class="real dot" cx="179.6" cy="31.1" r="3.5" />
+                                <circle class="inv dot" cx="306.6" cy="101" r="3.5" />
+                                <circle class="art dot" cx="305.6" cy="260" r="3.5" />
+                                <circle class="soc dot" cx="179.6" cy="329.9" r="3.5" />
+                                <circle class="ent dot" cx="52.6" cy="260" r="3.5" />
+                                <circle class="con dot" cx="52.6" cy="103" r="3.5" />
+                                <g id="real">
+                                    <path id="realPath" class="real"
+                                        d="M179.6,44c24.8,0,48,6.6,68,18.2l14-24.2c-26.1-15.1-51.8-22-82-22c-30.2,0-55.9,6.9-82,22l14,24.2C131.6,50.6,154.8,44,179.6,44z" />
+                                    <defs>
+                                        <path id="realdefs" d="M155 40Q180 30,200 40" />
+                                    </defs>
+                                    <text style="font: normal 16px Tahoma; fill: #000;">
+                                        <textpath xlink:href="#realdefs">實作型</textpath>
+                                    </text>
+                                </g>
+                                <g id="inv">
+                                    <path id="invPath" class="inv"
+                                        d="M315.6,180h28c0-30.2-6.9-55.9-22-82c-15.1-26.1-33.9-44.9-60-60l-14,24.2C288.2,85.7,315.6,129.7,315.6,180z" />
+                                    <defs>
+                                        <path id="invdefs" d="M292 90Q500 400,0 1500" />
+                                    </defs>
+                                    <text style="font: normal 16px Tahoma; fill: #000;">
+                                        <textpath xlink:href="#invdefs">研究型</textpath>
+                                    </text>
+                                </g>
+                                <g id="art">
+                                    <path id="artPath" class="art"
+                                        d="M315.6,180c0,50.3-27.3,94.3-68,117.8l14,24.2c26.1-15.1,44.9-33.9,60-60c15.1-26.1,22-51.8,22-82H315.6z" />
+                                    <defs>
+                                        <path id="artdefs" d="M315 235Q150 500,0 100" />
+                                    </defs>
+                                    <text style="font: normal 16px Tahoma; fill: #000;">
+                                        <textpath xlink:href="#artdefs">文藝型</textpath>
+                                    </text>
+                                </g>
+                                <g id="soc">
+                                    <path id="socPath" class="soc"
+                                        d="M179.6,316c-24.8,0-48-6.6-68-18.2l-14,24.2c26.1,15.1,51.8,22,82,22c30.2,0,55.9-6.9,82-22l-14-24.2C227.6,309.4,204.3,316,179.6,316z" />
+                                    <defs>
+                                        <path id="socdefs" d="M205 320Q100 355,0 100" />
+                                    </defs>
+                                    <text style="font: normal 16px Tahoma; fill: #000;">
+                                        <textpath xlink:href="#socdefs">社會型</textpath>
+                                    </text>
+                                </g>
+                                <g id="ent">
+                                    <path id="entPath" class="ent"
+                                        d="M43.6,180h-28c0,30.2,6.9,55.9,22,82c15.1,26.1,33.9,44.9,60,60l14-24.2C70.9,274.3,43.6,230.3,43.6,180z" />
+                                    <defs>
+                                        <path id="entdefs" d="M70 275Q0 200,0 -100" />
+                                    </defs>
+                                    <text style="font: normal 16px Tahoma; fill: #000;">
+                                        <textpath xlink:href="#entdefs">企業型</textpath>
+                                    </text>
+                                </g>
+                                <g id="con">
+                                    <path id="conPath" class="con"
+                                        d="M111.5,62.2L97.6,38c-26.1,15.1-44.9,33.9-60,60c-15.1,26.1-22,51.8-22,82h28C43.6,129.7,70.9,85.7,111.5,62.2z" />
+                                    <defs>
+                                        <path id="condefs" d="M45 130Q60 30,300 40" />
+                                    </defs>
+                                    <text style="font: normal 16px Tahoma; fill: #000;">
+                                        <textpath xlink:href="#condefs">事務型</textpath>
+                                    </text>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="index_test_text">
+                            <h1>職涯分析</h1>
+                            <p>剛畢業亦或是正在考慮轉職的你，夠了解自己嗎？透過職涯960讓生涯探索更接近真實工作世界！</p>
+                            <a href="./test_before.html" class="btn_primary">職涯分析</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- secondScreen -->
+        <section class="index_car">
+            <div class="twoBg container-fluid">
+                <div class="secondScreen row">
+                    <div class="index_sal_img col-lg-5 col-md-12 col-sm-12">
+                        <img src="./img/index/index_2nd/auditor.png" class="thirdSal" alt="">
+                        <img src="./img/index/index_2nd/teacher.png" class="secondSal" alt="">
+                        <img src="./img/index/index_2nd/doctor.png" class="firstSal" alt="">
+                        <div class="stages">
+                            <div class="stageS ">
+                                <img src="./img/index/index_2nd/3rd_blue.svg" class="firstStage" alt="">
+                                <div class="stageInfoS stageRWD" v-for="(item,index) in salStages" v-if="index == 2">
+                                    <p class="Stext">{{item.薪資平均}}</p>
+                                    <p class="Stitle">{{item.職業名稱}}</p>
+                                </div>
+                            </div>
+                            <div class="stageM">
+                                <img src="./img/index/index_2nd/2nd_diaper.svg" class="secondStage" alt="">
+                                <div class="stageInfoM stageRWD" v-for="(item,index) in salStages" v-if="index == 1">
+                                    <p class="Mtext">{{item.薪資平均}}</p>
+                                    <p class="Mtitle">{{item.職業名稱}}</p>
+                                </div>
+                            </div>
+                            <div class="stageL">
+                                <img src="./img/index/index_2nd/1st_yellow.svg" class="thirdStage" alt="">
+                                <div class="stageInfoL stageRWD" v-for="(item,index) in salStages" v-if="index == 0">
+                                    <p class="Ltext">{{item.薪資平均}}</p>
+                                    <p class="Ltitle">{{item.職業名稱}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="index_sal_chart col-lg-7 col-md-0 col-sm-0">
+                        <h1>TOP 3 行業薪資排行</h1>
+                        <div class="chart">
+                            <div class="salGraph" id="salGraph"></div>
+                        </div>
+                        <a href="./career.html" class="btn_second">探索更多行業</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- thirdScreen -->
+        <section class="index_disc">
+            <div class="threeBg container-fluid">
+                <div class="thirdScreen row">
+                    <div class="index_disc_text col-md-6 col-sm-12 col-xs-12">
+                        <h1>熱門行業話題</h1>
+                        <div class="index_dia">
+                            <div class="message">
+                                <div class="meg_box" v-for="item in messages">
+                                    <a href="">
+                                        <h5>{{item.DIS_NAME}}</h5>
+                                        <i class="fa fa-comment-alt " aria-hidden="true ">{{item.mes_num}}</i>
+                                        <i class="fa fa-heart " aria-hidden="true ">{{item.DIS_LIK_NUM}}</i>
+                                        <hr>
+                                        <div class="megBelow">
+
+                                            <!-- <img :src="item.MEM_PIC" alt=""> -->
+                                            <p class="member">{{item.MEM_NAME}}</p>
+                                            <p class="date">{{item.DIS_DATE}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="./forum_discuss.html" class="btn_second">探索更多文章</a href="#">
+                        </div>
+                    </div>
+                    <div class="index_disc_img col-md-6">
+                        <div class="img">
+                            <img class="dia_img" src="./img/index/index_3rd/homepage_3rd.gif" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- forthScreen -->
+        <section class="index_cour">
+            <div class="fourBg container-fluid">
+                <div class="forthScreen row">
+                    <div class="index_cour_text col-md-12 col-sm-12 col-xs-12">
+                        <h1>熱門課程</h1>
+                        <div class="courseMain">
+                            <div class="pad">
+                                <div class="screen_bg">
+                                    <div class="screen ">
+                                        <div class="screen_carousel "  >
+                                            <div v-for="course in courses ">
+
+                                                <a :href="'./course_introduce.html?ski_no=' + course.SKI_NO" class="item " id="indexCoures ">
+                                                    <div class="course_img ">
+                                                        <img :src="course.SKI_IMG " alt=" ">
+                                                        <div class="typeTag " :style="'backgroundColor:'+course.IND_COLOR+';'">{{course.IND_CLASS}}</div>
+                                                    </div>
+                                                    <div class="course_text ">
+                                                        <p class="courseTitle ">{{course.SKI_NAME}}</p>
+                                                        <i class="fas fa-user-friends "></i><span>{{course.SKI_BUY_NUM}}人已參與此課程</span>
+                                                        <div class="courseInfo ">
+                                                            <p class="courseHour ">總計{{course.SKI_TIME}}小時</p>
+                                                            <p class="courseCost ">NT${{course.SKI_PRICE}}</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen_bt">
+                <a href="./course_main.html" class="btn_second">探索更多課程</a>
+
+            </div>
+            </div>
+            <div class="stairBoy">
+                <div class="stair">
+                    <img src="./img/index/index_4th/stair.png" alt="">
+                </div>
+                <div class="boys">
+                    <div class="upBoy">
+                        <img src="./img/index/index_4th/pStairup.png" alt="" srcset="">
+                    </div>
+                    <div class="btBoy">
+                        <img src="./img/index/index_4th/pStairdown.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+
+            </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        <!-- fifthScreen -->
+        <section class="index_card">
+            <div class="fiveBg container-fluid">
+                <div class="fifthScreen row">
+                    <div class="index_card_img col-12">
+                        <h1>客製明信片</h1>
+                        <div id="img">
+                            <cards></cards>
+                        </div>
+                    </div>
+                    <div class="index_card_text col-12">
+                        <p class="postText">進入職場之前，把對自我的期許，寄給未來的自己吧！</p>
+                        <a href="./post_intro.html" class="btn_second">客製明信片</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="./js/index/index_vueAll.js"></script>
+    <script src="./js/index/index.js"></script>
+</body>
+
+</html>

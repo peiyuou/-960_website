@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職涯分析介紹</title>
+    @@include('app/link.html')
+    @@include('app/script.html')
+    <link rel="stylesheet" href="./bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./css/app_public.css">
+    <link rel="stylesheet" href="./css/pages_scss/test/test.css">
+    <script src="https://kit.fontawesome.com/d18b20bddd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    @@include('app/header.html')
+    <div class="before_test_wrap " id="testBefore" >
+        <img src="./img/test/bg_testintro.svg" alt="">
+        <main class="main_before_test container">
+
+         <section class="origin_of_types_before_test">
+             <h1>探索你的職能模型</h1>
+             <p>美國約翰‧霍普金斯大學心理學教授 John Holland 將人格與職業興趣結合，分為六種類型。他認為人與環境均可依其性質不同而區分為不同的類型，個人人格特質與其所選擇職業之間的適配程度會影響個人對工作的滿意、成就、適應、以及穩定程度，六大類分別為實作型(R)、研究型(I)、文藝型(A)、社會型(S)、企業型(E)、事務型(C)。現在，就來測測你是哪一型吧!                                                 </p>
+            </section>
+
+      <div class="all_type_card_before_test" >
+          <div class="cards_wrap">
+            <!-- <div class="card_R type_card " v-for="(item, index) in cardType" :class="{'active':item.isActive}" @click="$forceUpdate(), item.isActive = !item.isActive, test(index)">
+                <template v-if="item.IND_NO">
+                    <div class="card_content">
+                        <div class="type_capital_img ">
+                            <h2>{{item.IND_NO}}</h2>
+                            <h3>{{item.IND_CLASS}}</h3>
+                        </div>
+                        <div class="type_intro" v-if="item.isActive">
+                            <p class="p_small">{{item.IND_INFO}}</p>
+                        </div>
+                    </div>
+                </template>
+            </div> -->
+            <div class="card_R type_card " :class="{'active':cardType[4].isActive}" @click="$forceUpdate(), cardType[4].isActive = !cardType[4].isActive, test(4)">
+                <div class="card_content">
+                    <div class="type_capital_img ">
+                        <h2>{{cardType[4].IND_NO}}</h2>
+                        <h3>{{cardType[4].IND_CLASS}}</h3>
+                    </div>
+                    <div class="type_intro" v-if="cardType[4].isActive">
+                        <p class="p_small">{{cardType[4].IND_INFO}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card_I type_card " :class="{'active':cardType[3].isActive}" @click="$forceUpdate(), cardType[3].isActive = !cardType[3].isActive, test(3)"> 
+                <div class="card_content">
+                    <div class="type_capital_img">
+                        <h2>{{cardType[3].IND_NO}}</h2>
+                        <h3>{{cardType[3].IND_CLASS}}</h3>
+                    </div>
+                    <div class="type_intro" v-if="cardType[3].isActive">
+                        <p class="p_small">{{cardType[3].IND_INFO}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card_A type_card" :class="{'active':cardType[0].isActive}" @click="$forceUpdate(), cardType[0].isActive = !cardType[0].isActive, test(0)" >
+                <div class="card_content">
+                    <div class="type_capital_img">
+                        <h2>{{cardType[0].IND_NO}}</h2>
+                        <h3>{{cardType[0].IND_CLASS}}</h3>
+                    </div>
+                    <div class="type_intro" v-if="cardType[0].isActive" >
+                        <p class="p_small">{{cardType[0].IND_INFO}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card_S type_card" :class="{'active':cardType[5].isActive}" @click="$forceUpdate(), cardType[5].isActive = !cardType[5].isActive, test(5)" >
+                <div class="card_content">
+                    <div class="type_capital_img">
+                        <h2>{{cardType[5].IND_NO}}</h2>
+                        <h3>{{cardType[5].IND_CLASS}}</h3>
+                    </div>
+                    <div class="type_intro" v-if="cardType[5].isActive" >
+                        <p class="p_small">{{cardType[5].IND_INFO}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card_E type_card" :class="{'active':cardType[2].isActive}" @click="$forceUpdate(), cardType[2].isActive = !cardType[2].isActive, test(2)" >
+                <div class="card_content">
+                    <div class="type_capital_img">
+                        <h2>{{cardType[2].IND_NO}}</h2>
+                        <h3>{{cardType[2].IND_CLASS}}</h3>
+                    </div>
+                    <div class="type_intro" v-if="cardType[2].isActive" >
+                        <p class="p_small">{{cardType[2].IND_INFO}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card_C type_card" :class="{'active':cardType[1].isActive}" @click="$forceUpdate(), cardType[1].isActive = !cardType[1].isActive, test(1)" >
+                <div class="card_content">
+                    <div class="type_capital_img">
+                        <h2>{{cardType[1].IND_NO}}</h2>
+                        <h3>{{cardType[1].IND_CLASS}}</h3>
+                    </div>
+                    <div class="type_intro" v-if="cardType[1].isActive" >
+                        <p class="p_small">{{cardType[1].IND_INFO}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+           
+        </div>
+
+      <div class="wrap_of_btn_before_test">
+            <a href="./test_instruction.html" class="btn_primary">
+                立即測驗
+            </a></div>
+        </main>
+    @@include('app/footer.html')  
+    </div>
+    <!-- @@include('app/footer.html')   -->
+    <!-- @@include('app/script.html') -->
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js'></script> -->
+    <!-- <script type="text/javascript" src="./js/test/jquery-3.5.1.min.js"></script> -->
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script> -->
+    <script type="text/javascript" src="./js/test/test_before.js"></script>
+    <script type="text/javascript" src="./js/test/test_before_vue.js"></script>
+</body>
+
+</html>

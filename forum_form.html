@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>forum_form</title>
+   @@include('app/script.html')
+  <link rel="stylesheet" href="./bootstrap/bootstrap-grid.min.css" />
+  <link rel="stylesheet" href="./css/app_public.css" />
+  <link rel="stylesheet" href="./css/pages_scss/forum/forum.css" />
+</head>
+
+<body>
+  @@include('app/header.html')
+  <div id="forum_form" class="container-fluid">
+    <div class="title form-group row">
+      <h3>發表文章</h3>
+    </div>
+    <!-- <hr class="form-group row" /> -->
+    <div class="m_50 form-group row">
+      <div class="select_name">標題</div>
+      <div class="topic_text">
+        <input type="text" id="text_topic" />
+      </div>
+    </div>
+    <div class="second_fix form-group row">
+      <!--職業分類-->
+      <div class="select_name">六大分類</div>
+      <div class="dropdown-el" @click="typeDropdown()" :class="{'expanded': isOpen}">
+        <input type="radio" name="sortType" value="R" id="type_R" @click="selectType('實用型')"
+          checked="checked" /><label for="type_R">實用型</label>
+        <input type="radio" name="sortType" value="I" id="type_I" @click="selectType('研究型')" />
+        <label for="type_I">研究型</label>
+        <input type="radio" name="sortType" value="A" id="type_A" @click="selectType('文藝型')" />
+        <label for="type_A">文藝型</label>
+        <input type="radio" name="sortType" value="S" id="type_S" @click="selectType('社會型')" />
+        <label for="type_S">社會型</label>
+        <input type="radio" name="sortType" value="E" id="type_E" @click="selectType('企業型')" />
+        <label for="type_E">企業型</label>
+        <input type="radio" name="sortType" value="C" id="type_C" @click="selectType('事務型')" />
+        <label for="type_C">事務型</label>
+      </div>
+      <!--問題分類-->
+      <div class="qu_space"></div>
+      <div class="select_name">問題分類</div>
+
+      <div class="dropdown_share" @click="shareDropdown()" :class="{'expanded_share': isShareOpen}">
+        <input type="radio" name="quType" value="問題討論" checked="checked" id="type_qu" @click="selectQU('問題討論')" />
+        <label for="type_qu">問題討論</label>
+        <input type="radio" name="quType" value="經驗分享" id="type_experience" @click="selectQU('經驗分享')" />
+        <label for="type_experience">經驗分享</label>
+      </div>
+    </div>
+
+    <div class="form-group text_area row">
+      <div class="select_name"></div>
+      <div class="space">
+        <textarea id="content"></textarea>
+      </div>
+    </div>
+    <div class="form-group bottom_btn row">
+      <a href="./forum_discuss.html" class="btn_third">返回</a>
+      <button class="btn_primary" @click="sendMsg">送出</button>
+    </div>
+  </div>
+  @@include('app/footer.html')
+
+  <!-- <script src="https://kit.fontawesome.com/d18b20bddd.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script> -->
+  <script src="./js/forum/forum_form.js"></script>
+  <script>
+
+  </script>
+
+</body>
+
+</html>

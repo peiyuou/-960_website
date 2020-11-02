@@ -1,0 +1,169 @@
+@import'./_public_dontTouch/utils/variables';
+.whole_page{
+    background: $second_color2;
+    height: 100vh;
+.main_content{
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .img_bx{
+        // border: 1px solid blue;
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        padding: 5%;
+        @media screen  and (max-width: 767px){ 
+            width: 350px;
+           }
+        img{
+            width: 100%;
+            animation: ta-da 1.5s linear 1;
+            @keyframes ta-da {
+                0%{
+                    transform: translateY(-50px);
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
+        }
+      
+    }
+    .link_wrap{
+        // border: 1px solid black;
+        width: 100%;
+        display: flex;
+        @media screen  and (max-width: 767px){ 
+            flex-direction: column;
+            align-items: center;
+           }
+        .sign{
+            // border: 1px solid black;
+            display: flex;
+            align-items:flex-end ;
+            img{
+                width: 200px;
+            }
+            @media screen  and (max-width: 878px){ 
+               display: none;
+               }
+        }
+        .circle_bx{
+            // border: 1px solid green;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            @media screen  and (max-width: 767px){ 
+                width: 80%;
+                }
+            .circle{
+              width: 350px;
+              height: 350px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+            //   background: white;
+              overflow: hidden;
+             transition: linear .2s;
+             animation: ta-da 1.5s linear 1;
+            @media screen  and (max-width: 767px){ 
+                width: 300px;
+                height: 150px;
+                margin: 1% 0;
+                border-radius: 5px;
+            }
+              a{
+                  font-size: 32px;
+                  font-weight: bold;
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+              }
+            }
+            .circle_left{
+                border: 10px solid transparent;
+                box-shadow: $card_shadow;
+                animation: blink 3s linear infinite;
+                transition: linear .5s;
+                a{
+                color: #EE7002;
+                @media screen  and (max-width: 767px){ 
+                color: #ffffff;
+                }
+                }
+                &:hover{
+                animation-play-state: paused;
+                transform: scale(0.9);
+                   }
+                   &:hover a{
+                    color: white;
+                   }
+                @media screen  and (max-width: 767px){ 
+                animation: none;
+                background: #119BEB;
+                }
+            }
+            .circle_right{
+                border: 10px solid transparent;
+                box-shadow: $card_shadow;
+                animation: blink2 3s linear infinite;
+                transition: linear .5s;
+                a{
+                color: #119BEB;
+                @media screen  and (max-width: 767px){ 
+                color: #ffffff;
+                }            
+               }
+                &:hover{
+                    animation-play-state: paused;
+                    transform: scale(0.9);
+                   }
+                   &:hover a{
+                    color: white;
+                   }
+                @media screen  and (max-width: 767px){ 
+                animation: none;
+                background: #EE7002;
+                }
+                }
+            }
+
+            @keyframes blink {
+                0%{
+                    background: transparent;
+                    border: 100px solid transparent;
+    
+                }
+                100%{
+     
+                    background: #EE7002;
+                    border: 1px solid #EE7002
+                }
+            }
+            @keyframes blink2 {
+                0%{
+
+                    background: transparent;
+                    border: 100px solid transparent;
+    
+                }
+                100%{
+     
+                    background: #119BEB;
+                    border: 1px solid #119BEB;
+                }
+            }
+            }
+            
+            }
+}
+    
+
+
+

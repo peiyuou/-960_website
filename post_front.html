@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>職引960客製明信片</title>
+  @@include('app/link.html')
+  <link rel="stylesheet" href="./css/pages_scss/post_card/post_card.css" />
+  @@include('app/script.html')
+</head>
+
+<body>
+  <!-- header -->
+  @@include('app/header.html')
+  <!-- header 結束-->
+  <div class="postcard_main container">
+    <div class="postcard row">
+      <!-- 桌機側邊欄 -->
+      <div class="desk col-md-3" id="desk">
+        <div class="post_desk" id="frontAllStyle">
+          <div class="change_style">
+            <div class="front_all_style">
+              <div class="mark">
+                <h3 id="frontStyle">格式</h3>
+                <h3 id="frontOutline">外框</h3>
+              </div>
+              <front-style></front-style>
+            </div>
+            <outline-style></outline-style>
+          </div>
+        </div>
+        <div class="post_desk" id="backAllStyle">
+          <div class="change_style">
+            <div class="back_all_style">
+              <div class="mark">
+                <h3 id="backStamps">郵票</h3>
+                <h3 id="backPostmarks">郵戳</h3>
+              </div>
+            </div>
+            <stamp-style></stamp-style>
+            <postmark-style></postmark-style>
+          </div>
+        </div>
+      </div>
+      <!-- 明信片區 -->
+      <div class="postcardZone col-md-9 col-12">
+        <!-- --------------------正面開始 ------------------->
+        <div class="postcard_front">
+          <h2>正面</h2>
+          <div class="front_post" method="post" id="frontPost">
+            <div class="mainStyle" id="frontCapture">
+              <!-- 正面格式一 -->
+              <label for="img1" class="style1" id="frontStyle1">
+                <div class="all">
+                  <p class="drag"></p>
+                  <input type="file" name="img1" id="img1" />
+                </div>
+              </label>
+
+              <!-- 正面格式二 -->
+              <div class="style2" id="frontStyle2">
+                <label for="img2_top" class="top_2" id="frontStyle2Top">
+                  <p class="drag"></p>
+                  <input type="file" name="img2_top" id="img2_top" />
+                </label>
+
+                <div class="bottom_2">
+                  <label for="img2_left" class="left_2" id="frontStyle2Left">
+                    <p class="drag"></p>
+                    <input type="file" name="img2_left" id="img2_left" />
+                  </label>
+
+                  <label for="img2_right" class="right_2" id="frontStyle2Right">
+                    <p class="drag"></p>
+                    <input type="file" name="img2_right" id="img2_right" />
+                  </label>
+                </div>
+              </div>
+              <!-- 正面格式三 -->
+              <div class="style3" id="frontStyle3">
+                <label for="img3_left" class="left_3" id="frontStyle3Left">
+                  <p class="drag"></p>
+                  <input type="file" name="img3_left" id="img3_left" />
+                </label>
+
+                <label for="img3_right" class="right_3" id="frontStyle3Right">
+                  <p class="drag"></p>
+                  <input type="file" name="img3_right" id="img3_right" />
+                </label>
+              </div>
+              <!-- 到這裡正面格式結束 -->
+              <!-- 主要外框 -->
+              <div class="main_outline_style">
+                <img src="./img/post_card/a_outline0.png" id="mainImg" />
+              </div>
+            </div>
+          </div>
+          <button id="toBack" class="btn_third" onclick="captureFront();">
+            <!-- onclick="doCapture();" -->
+            背面
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          <!-- 開始切換格式 -->
+          <!-- 手機板換格式 -->
+          <div class="post_phone">
+            <div class="change_style" id="phoneFrontAllStyle">
+              <div class="front_all_style">
+                <p>正面格式</p>
+                <front-style></front-style>
+              </div>
+              <p>正面外框</p>
+              <outline-style></outline-style>
+            </div>
+          </div>
+        </div>
+        <!-- --------------------背面開始------------------ -->
+        <div class="postcard_back">
+          <h2>背面</h2>
+          <div class="back_post">
+            <div class="mainStyle">
+              <!-- 背面格式-->
+              <div class="style_back" id="backCapture">
+                <img src="./img/post_card/postmark1.png" id="postmark" class="mark_position" />
+
+                <div class="left_write">
+                  <!-- <p id="leftWrite" contenteditable="plaintext-only">請寫下對未來的期許</p> -->
+                  <p id="leftWrite" contenteditable="true">請寫下對未來的期許</p>
+                </div>
+                <div class="right_write">
+                  <div class="style_stamp">
+                    <img src="./img/post_card/stamp1.png" id="mainStamp" />
+                  </div>
+                  <div class="text">
+                    <div id="rightWrite" maxlength="208" contenteditable="true"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 到這裡背面格式結束 -->
+          </div>
+          <div class="buttons">
+            <button id="toFront" class="btn_third">
+              <i class="fas fa-arrow-left"></i>
+              正面
+            </button>
+            <a href="javascript:;" id=" choice_date" class="btn_third" onclick="captureBack();">選擇日期
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="post_phone">
+            <div class="change_style" id="phoneBackAllStyle">
+              <p>背面郵票</p>
+              <stamp-style></stamp-style>
+              <p>背面郵戳</p>
+              <postmark-style></postmark-style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @@include('app/footer.html')
+
+  <script src="./js/post_card/popper.min.js"></script>
+  <script src="./js/post_card/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="./js/post_card/html2canvas.js"></script>
+  <script src="./js/post_card/post_vue.js"></script>
+  <script src="./js/post_card/post_imgUp.js"></script>
+  <script src="./js/post_card/post_change.js"></script>
+  <script src="./js/post_card/post_canvas.js"></script>
+</body>
+
+</html>

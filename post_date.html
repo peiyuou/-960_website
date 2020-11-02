@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  @@include('app/link.html')
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.min.css" />
+  <link rel="stylesheet" href="./css/pages_scss/post_card/post_card.css" />
+  @@include('app/script.html')
+
+  <title>職引960選擇日期</title>
+</head>
+
+<body>
+  <!-- header -->
+  @@include('app/header.html')
+  <!-- header 結束-->
+  @@include('app/lightbox_login.html')
+  <div class="postcard_view container">
+    <!-- action="#" method="post" -->
+    <div class="select_date row">
+      <!--c-init class -->
+      <div class="date col">
+        <h3>選擇寄送日期：</h3>
+        <input type="text" class="input" id="pickdate" data-dd-theme="calendar" placeholder="YYYY-MM-DD" />
+      </div>
+    </div>
+    <div class="view row">
+      <div class="view_front col-md-6">
+        <p>正面</p>
+        <!-- <img src="./img/post_card/front.png" alt=""> -->
+        <img src="" id="frontImg" />
+      </div>
+      <div class="view_back col-md-6">
+        <p>背面</p>
+        <!-- <img src="./img/post_card/back.png" alt=""> -->
+        <img src="" id="backImg" />
+      </div>
+      <div class="send_date col">
+        <div class="col-md-5 col-lg-4">
+          <a href="./post_front.html" class="btn_third" id="restart">
+            <i class="fas fa-arrow-left"></i>
+            重新製作
+          </a>
+
+          <button class="btn_primary" type="button" id="send">送出</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay">
+      <div class="pop">
+        <div class="close">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="when">
+          <p class="when_date"></p>
+          <p class="p_small" id="sec"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  @@include('app/footer.html')
+
+  <script src="./js/post_card/datedropper.pro.min.js"></script>
+  <script src="./js/post_card/post_date.js"></script>
+  <script src="./js/post_card/post_canvas.js"></script>
+</body>
+
+</html>

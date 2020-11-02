@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測驗進行</title>
+    @@include('app/link.html')
+    @@include('app/script.html')
+    <link rel="stylesheet" href="./css/pages_scss/test/test.css">
+    <script src="https://kit.fontawesome.com/d18b20bddd.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    @@include('app/header.html')
+    <div class="during_test_wrap " id="testProcess">
+        <main class="main_during_test container">
+            <div class="question_bx">
+                 <!-- 時間去哪了呢 -->
+                <div class="timer_bx">
+                    <p>測驗時間已經過<span class="timimg"></span>秒</p>
+                </div>
+                 <!-- 時間放這裡 -->
+                <div class="topic_bx">
+                        <div class="img_bx">
+                            <img src="./img/test/host.svg"alt="">
+                        </div>
+                             <div class="question">
+                                  <span> {{index+1 }}.</span>
+                                      <P class="topic">{{ quizData[index].QUIZ_CON }}</P>
+                            </div>
+                        </div>
+            </div>
+            <div class="answer_option_wrap">
+                <a class="answer_option option1" v-on:click="changeIndex(1, quizData[index].QUIZ_SEL_ONE_CLASS);changePage();width===540?'':width+=5.5"  >
+                        <img class="cat" :src="quizData[index].QUIZ_PIC_ONE"  alt="">
+                        <p class="a1">{{ quizData[index].QUIZ_SEL_ONE_CONTENT }}</p>
+                </a>
+                <div class="compare">
+                   <p>VS</p>
+                </div>
+                <a class="answer_option option2"  v-on:click="changeIndex(1, quizData[index].QUIZ_SEL_TWO_CLASS);changePage();width===540?'':width+=5.5">
+                    <img class="cat" :src="quizData[index].QUIZ_PIC_TWO"  alt="">
+                    <p class="a2">{{ quizData[index].QUIZ_SEL_TWO_CONTENT }}</p>
+                </a>
+            </div>
+            <div class="progress_bar_bx">
+                <div class="progress_container">
+                    <span class="prg">{{index }}/18</span>
+                <div class="progress_bar" v-bind:style="divStyle"></div>
+                </div>
+            </div>
+        </main>
+        @@include('app/footer.html')
+    </div>
+  
+    <script src="././js/test/test_process.js"></script>
+<script></script>
+</body>
+</html>

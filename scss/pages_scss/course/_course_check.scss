@@ -1,0 +1,81 @@
+@import "../../_public_dontTouch/utils/variables";
+div#check_order {
+    background-image: url(../../../img/course/bg/check.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    div.check_bg {
+        height: calc(100vh - 190px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div.check_order_center {
+            div.check_order_contain {
+                // border: $outline3;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                fieldset {
+                    // border: $outline1;
+                    border-radius: 5px;
+                    padding: 10px 0;
+                    background-color: $second_color2;
+                    margin: 0 auto 20px;
+                    background: rgba(255, 255, 255, 0.7);
+                    legend {
+                        text-align: center;
+                        padding: 0 20px;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                    table {
+                        // border: $outline2;
+                        // background: #fff;
+                        border-radius: 5px;
+                        tr {
+                            margin: 10px 0;
+                            border-bottom: 3px solid $social_color;
+                            &:last-child {
+                                border-bottom: 0;
+                            }
+                            // border: $outline2;
+                            th {
+                                // border-right: $outline1;
+                                padding: 10px 30px;
+                                vertical-align: middle;
+                            }
+                            td {
+                                // border: $outline1;
+                                padding: 10px 30px;
+                                ul {
+                                    li {
+                                        margin: 5px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                p {
+                    margin-bottom: 20px;
+                }
+                div.link_btn {
+                    a {
+                        margin: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    div#check_order div.check_bg div.check_order_center div.check_order_contain fieldset table tr th {
+        padding: 0;
+        vertical-align: middle;
+    }
+    div#check_order div.check_bg div.check_order_center div.check_order_contain fieldset table tr td {
+        width: 70%;
+        line-height: 1.5;
+    }
+}

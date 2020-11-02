@@ -1,0 +1,110 @@
+<!-- header -->
+<div id="header_cart">
+  <div class="header_wrap">
+    <header class="header">
+      <div class="hamburger">
+        <button class="hamburger hamburger--spring btn_switch" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+      <div class="logo">
+        <a href="front_index.html">
+          <img src="img/LOGO_FINAL.svg" alt="" />
+        </a>
+      </div>
+      <div class="header_nav">
+        <ul>
+          <li><a href="test_before.html" id="text_page">職涯分析</a></li>
+          <li><a href="career.html">行業攻略</a></li>
+          <li><a href="forum_discuss.html">職涯論壇</a></li>
+          <li><a href="course_main.html">探索課程</a></li>
+          <li><a href="post_intro.html">時光明信片</a></li>
+        </ul>
+      </div>
+      <div class="header_icon">
+        <div class="cart">
+          <button href="#">
+            <i class="fas fa-shopping-cart"></i>
+            <div class="cart_num" v-show="cart_items.length !== 0">
+              <span>{{cart_items.length}}</span>
+            </div>
+          </button>
+        </div>
+        <div class="member">
+          <a id="member_icon" href="member_sign_in.html"
+            ><i class="fas fa-user"></i
+          ></a>
+          <button id="header_logOut" @click="header_logOut">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>
+  <!-- cart -->
+  <div class="side_cart cart_off">
+    <div class="cart_close">
+      <button id="cart_close" class="btn_third">
+        <i class="fas fa-reply"></i>
+      </button>
+      <span>購物車</span>
+    </div>
+    <div class="cart_course">
+      <p class="no_item" v-show="cart_items.length == 0">
+        <span>尚未添加課程，</span><br />
+        <span
+          >前去<a href="course_main.html" class="btn_second">探索課程</a></span
+        >
+      </p>
+      <ul>
+        <li class="cart_item" v-for="(item,index) in cart_items">
+          <div class="cus_card">
+            <a :href="'./course_introduce.html?ski_no=' + item.ski_no">
+              <div class="card_img">
+                <img :src="item.ski_img" alt="" />
+              </div>
+              <div class="card_content">
+                <p>{{item.ski_name}}</p>
+                <div class="card_content_scrb">
+                  <div class="card_content_msg">
+                    <span
+                      class="card_type"
+                      :style="'background:' + item.ind_color + ';'"
+                      >{{item.ind_class}}</span
+                    >
+                    <span class="card_price">NT${{item.ski_price}}</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="remove">
+              <button @click="remove_item(index)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="check_out_contain">
+      <div class="discount_title">
+        <p>購買兩堂課程，即享有8折優惠!</p>
+      </div>
+      <div class="price_check">
+        <ul>
+          <li><span>課程總金額:</span><span>NT${{add_total}}</span></li>
+          <li><span>折扣金額:</span><span>NT${{discount}}</span></li>
+        </ul>
+      </div>
+      <div class="price_total_btn">
+        <div class="price_total">
+          <span>總計:${{final_price}}</span>
+        </div>
+        <button class="check_out" @click="go_checkout">前往結帳</button>
+      </div>
+    </div>
+  </div>
+</div>

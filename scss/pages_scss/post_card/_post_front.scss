@@ -1,0 +1,629 @@
+@import'../../_public_dontTouch/utils/variables';
+@import'../../_public_dontTouch/utils/mixin';
+
+* {
+  box-sizing: border-box;
+}
+
+div.header_wrap header.header div.header_nav ul li:nth-child(5) a::after {
+  @include header_line;
+}
+
+body {
+  background-image: url("../../../img/post_card/post_background.svg");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+@mixin style () {
+  #{'.style_list'} {
+    // border: 1px solid rgb(182, 182, 182);
+    border-radius: 0 20px 20px 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    background-color: $second_color2;
+
+
+    .style {
+      border: 2px solid #a5a5a5;
+      border-radius: 8px;
+      width: 100%;
+      margin: 15px 0;
+      padding: 8px;
+      cursor: pointer;
+
+      &.active {
+        border: 2px solid #EE7002;
+      }
+
+      &:hover {
+        border: 2px solid #EE7002;
+
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+
+  }
+}
+
+
+@mixin phone_style {
+  #{'.style_list'} {
+
+    // border: 1px solid blue;
+    justify-content: space-around;
+    margin: 10px 0 20px;
+
+    .style {
+      border: 2px solid #a5a5a5;
+      border-radius: 8px;
+      padding: 5px;
+      cursor: pointer;
+
+      &.active {
+        border: 2px solid #EE7002;
+      }
+
+      &:hover {
+        border: 2px solid #EE7002;
+
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  }
+}
+
+@mixin h3 {
+  #{h3} {
+    // border: 1px solid rgb(182, 182, 182);
+    // display: inline-block;
+    padding: 5px;
+    background-color: $second_color2;
+    border-radius: 5px 5px 0 0;
+    border: none;
+    cursor: pointer;
+
+    &.active {
+      background-color: #EE7002;
+      color: white;
+    }
+
+    &:hover {
+      background-color: #EE7002;
+      color: white;
+    }
+
+    &:nth-child(2) {
+      border-left: 1px solid rgb(182, 182, 182);
+    }
+  }
+}
+
+div.postcard_main {
+  // border: 1px solid red;
+  // background-color: $second_color2;
+  padding-top: 20px;
+  max-width: 1200px;
+  margin-top: 30px;
+  min-height: calc(100vh - 230px);
+
+  .postcard,
+  .row {
+    justify-content: space-between;
+
+    .desk {
+      #frontAllStyle {
+        // background-color: $art_color;
+
+        .change_style {
+          // border: 1px solid black;
+
+
+          .front_all_style {
+            // border: 1px solid blue;
+            // padding: 10px;
+            @include style();
+            // background-color: $art_color;
+
+            .mark {
+              // border: 1px solid rgb(200, 52, 52);
+              cursor: pointer;
+              display: flex;
+              @include h3();
+            }
+          }
+
+          .style_all_outline {
+            // border: 1px solid blue;
+            @include style();
+
+            .style {
+              text-align: center;
+              position: relative;
+
+              p {
+                position: absolute;
+                // border: 1px solid blue;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+        }
+      }
+
+      #backAllStyle {
+        // border: 1px solid rgb(247, 25, 180);
+        margin: 0;
+
+        .change_style {
+          // border: 1px solid yellow;
+
+          .back_all_style {
+            // border: 1px solid rgb(38, 73, 44);
+
+
+            .mark {
+              // border: 1px solid black;
+              display: flex;
+              @include h3();
+
+            }
+
+          }
+
+          .style_all_stamps {
+            // border: 1px solid yellow;
+            @include style();
+
+          }
+
+          .style_all_postmarks {
+            // border: 1px solid yellow;
+            @include style();
+          }
+
+        }
+
+      }
+    }
+
+    // 明信片區
+
+    .postcardZone {
+      // background-color: lightblue;
+      padding-left: -15px;
+      padding-bottom: 20px;
+
+      // 正面明信片---------------------
+      .postcard_front {
+        // background-color: lightblue;
+        // padding-left: -15px;
+        // padding-bottom: 20px;
+        // border: 1px solid black;
+
+        .front_post {
+          // border: 1px solid blue;
+          margin-top: 20px;
+          background-color: white;
+          width: 100%;
+
+
+          .mainStyle {
+            // border: 1px solid rgb(111, 137, 255);
+            box-shadow: $card_shadow;
+            position: relative;
+            // height: 553px;
+            height: 0;
+            padding-bottom: 63.5%;
+
+
+            .style1 {
+              // border: 1px solid red;
+              text-align: center;
+              // display: none;
+              display: inline-block;
+              height: 0;
+              padding-bottom: 63.5%;
+              width: 100%;
+              background-color: rgb(255, 252, 238);
+
+              p.drag {
+                color: gray;
+                padding-top: 6%;
+              }
+
+              input {
+                display: none;
+              }
+
+            }
+
+            .style2 {
+              // border: 1px solid red;
+              text-align: center;
+              display: none;
+              width: 100%;
+
+              .top_2 {
+                // border: 1px solid blue;
+                display: inline-block;
+                width: 100%;
+                height: 0;
+                padding-bottom: 20%;
+                background-color: rgb(255, 252, 238);
+
+                p.drag {
+                  color: gray;
+                  padding-top: 6%;
+                }
+
+                input {
+                  display: none;
+                }
+
+              }
+
+              .bottom_2 {
+
+                display: flex;
+
+                .left_2 {
+                  // border: 1px solid blue;
+                  background-color: rgb(219, 253, 204);
+                  height: 0;
+                  padding-bottom: 43.5%;
+                  background-position: center;
+                  flex-grow: 1;
+
+                  p.drag {
+                    color: gray;
+                    padding-top: 10%;
+                  }
+
+                  input {
+                    display: none;
+                  }
+                }
+
+                .right_2 {
+                  // border: 1px solid blue;
+                  background-color: rgb(255, 228, 253);
+                  flex-grow: 1;
+                  height: 0;
+                  padding-bottom: 43.5%;
+
+                  p.drag {
+                    color: gray;
+                    padding-top: 10%;
+                  }
+
+                  input {
+                    display: none;
+                  }
+
+                }
+              }
+
+            }
+
+            .style3 {
+              display: none;
+              text-align: center;
+
+              .left_3 {
+                background-color: rgb(219, 253, 204);
+                flex-grow: 1;
+                padding-bottom: 63.4%;
+                height: 0;
+                text-align: center;
+
+                p.drag {
+                  color: gray;
+                  padding-top: 15%;
+                }
+
+                input {
+                  display: none;
+                }
+
+              }
+
+              .right_3 {
+                background-color: rgb(255, 228, 253);
+                flex-grow: 1;
+                padding-bottom: 63.4%;
+                height: 0;
+
+                p.drag {
+                  color: gray;
+                  padding-top: 15%;
+                }
+
+                input {
+                  display: none;
+                }
+
+              }
+            }
+
+            .main_outline_style {
+              position: absolute;
+              // position: relative;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              pointer-events: none;
+
+
+              img {
+                height: 100%;
+                width: 100%;
+                z-index: -2;
+
+              }
+            }
+
+
+          }
+        }
+
+        button {
+          float: right;
+          margin: 20px 0;
+          // border: 2px solid #1b4d9f;
+
+          i {
+            // border: 1px solid blue;
+            display: inline-block;
+            font-size: 17px;
+            padding-left: 10px;
+          }
+        }
+
+        .post_phone {
+          .change_style {
+            // border: 1px solid rgb(255, 0, 200);
+            margin-top: 80px;
+            // background-color: $second_color2;
+
+
+            .front_all_style {
+              // border: 1px solid rgb(23, 29, 23);
+              @include phone_style();
+
+            }
+
+            .style_all_outline {
+              // border: 1px solid rgb(23, 29, 23);
+              @include phone_style();
+
+              p {
+                position: absolute;
+                // border: 1px solid blue;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+
+            }
+          }
+        }
+      }
+
+      //背面明信片----------------------
+      .postcard_back {
+        // background-color: rgb(149, 252, 154);
+
+        .back_post {
+          // border: 1px solid rgb(70, 92, 74);
+          margin: 20px 0;
+          // display: inline-block;
+
+          .mainStyle {
+            // border: 1px solid rgb(241, 161, 57);
+            // background-color: yellow;
+            box-shadow: $card_shadow;
+            padding-bottom: 63.5%;
+            height: 0;
+
+
+
+            .style_back {
+              // border: 1px solid red;
+              display: flex;
+              position: relative;
+              overflow: hidden;
+
+              .mark_position {
+                position: absolute;
+                top: 20%;
+                right: 30%;
+                // border: 1px solid gray;
+                min-width: 100px;
+                width: 24%;
+                cursor: move;
+                display: none;
+              }
+
+              .left_write {
+                background-color: rgb(255, 252, 238);
+                width: 50%;
+                height: 0;
+                padding-bottom: 63.6%;
+                // border: 1px solid red;
+                overflow: hidden;
+
+                #leftWrite {
+                  margin-top: 5%;
+                  margin-left: 5%;
+                  padding: 0 5px;
+                  border: none;
+                  border-right: 2px solid #cccccc;
+                  resize: none;
+                  width: 95%;
+                  padding-bottom: 100%;
+                  outline: none;
+                  line-height: 30px;
+                  font-size: 18px;
+                  background: transparent;
+                  overflow: hidden;
+                  // border: 1px solid blue;
+                  // height: 0;
+                  // color: rgb(179, 35, 35);
+                  word-break: break-word;
+                  white-space: pre-wrap;
+                  // max-height: 100%;
+                }
+
+
+              }
+
+              .right_write {
+                background-color: rgb(255, 252, 238);
+                width: 50%;
+                height: 0;
+                padding-bottom: 63.6%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+
+
+                .style_stamp {
+                  // border: 1px solid black;
+                  margin-top: 3%;
+                  // margin-right: 10%;
+                  // width: 100%;
+                  background-image: url(../../../img/post_card/stampPosition1.png);
+                  background-size: contain;
+                  background-position: right;
+                  background-repeat: no-repeat;
+                  height: 0;
+                  padding-bottom: 35%;
+
+
+                  img {
+                    // border: 1px solid blue;
+                    width: 46.5%;
+                    float: right;
+                    display: none;
+                  }
+                }
+
+                .text {
+                  // border: 1px solid blue;
+                  margin-top: 15%;
+                  display: inline-block;
+                  height: 0;
+                  padding-bottom: 65%;
+                  overflow: hidden;
+
+                  #rightWrite {
+                    margin-left: 5%;
+                    resize: none;
+                    width: 90%;
+                    // height: 50;
+                    padding-bottom: 60%;
+                    outline: none;
+                    line-height: 30px;
+                    font-size: 18px;
+                    background: linear-gradient(transparent 90%, #cccccc 10%);
+                    background-size: 100% 30px;
+                    overflow: hidden;
+                    border: none;
+                    // border: 1px solid blue;
+
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .buttons {
+          // border: 1px solid brown;
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: flex-end;
+
+          #toFront {
+            margin-right: 50px;
+            display: inline-block;
+
+            i {
+              padding-right: 10px;
+            }
+          }
+
+          #choice_date {
+            display: inline-block;
+
+            i {
+              padding-left: 10px;
+            }
+          }
+        }
+
+        .post_phone {
+          margin: 0;
+          padding: 0;
+
+          .change_style {
+            // border: 1px solid gray;
+            // background-color: $second_color2;
+
+            p {
+              // border: 1px solid blue;
+              margin-bottom: 20px;
+            }
+
+            .style_all_stamps {
+              // border: 1px solid yellow;
+
+              @include phone_style();
+            }
+
+            .style_all_postmarks {
+              // border: 1px solid yellow;
+
+              @include phone_style();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(min-width:768px) {
+  .post_phone {
+    display: none;
+  }
+}
+
+@media(max-width:767px) {
+  .desk {
+    display: none;
+  }
+
+
+  .post_phone {
+    display: block;
+  }
+}

@@ -1,0 +1,62 @@
+[{
+        "href": "course_introduce.html",
+        "src": "./img/index/index_4th/課程照片-翻轉課堂的職業講師祕訣.jpg",
+        "type": "實作型",
+        "color": "practical_bg_color",
+        "title": "翻轉教學技巧",
+        "time": "6",
+        "person": "6666",
+        "cost": "1000"
+    },
+    {
+        "href": "course_introduce.html",
+        "src": "./img/index/index_4th/課程照片-翻轉課堂的職業講師祕訣.jpg",
+        "type": "研究型",
+        "color": "research_bg_color",
+        "title": "翻轉教學技巧",
+        "time": "6",
+        "person": "6666",
+        "cost": "1000"
+    },
+    {
+        "href": "course_introduce.html",
+        "src": "./img/index/index_4th/課程照片-翻轉課堂的職業講師祕訣.jpg",
+        "type": "文藝型",
+        "color": "art_bg_color",
+        "title": "翻轉教學技巧",
+        "time": "6",
+        "person": "6666",
+        "cost": "1000"
+    },
+    {
+        "href": "course_introduce.html",
+        "src": "./img/index/index_4th/課程照片-翻轉課堂的職業講師祕訣.jpg",
+        "type": "社會型",
+        "color": "social_bg_color",
+        "title": "翻轉教學技巧",
+        "time": "6",
+        "person": "6666",
+        "cost": "1000"
+    },
+    {
+        "href": "course_introduce.html",
+        "src": "./img/index/index_4th/課程照片-翻轉課堂的職業講師祕訣.jpg",
+        "type": "企業型",
+        "color": "enterprise_bg_color",
+        "title": "翻轉教學技巧",
+        "time": "6",
+        "person": "6666",
+        "cost": "1000"
+    },
+    {
+        "href": "course_introduce.html",
+        "src": "./img/index/index_4th/課程照片-翻轉課堂的職業講師祕訣.jpg",
+        "type": "事務型",
+        "color": "thing_bg_color",
+        "title": "翻轉教學技巧",
+        "time": "6",
+        "person": "6666",
+        "cost": "1000"
+    }
+
+]

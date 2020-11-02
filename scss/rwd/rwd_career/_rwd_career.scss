@@ -1,0 +1,76 @@
+@media screen and (min-width: 991px) {
+  .car_con_area {
+    height: 100%;
+    min-height: calc(100vh - 190px);
+    .car_con_list {
+      width: 200px;
+      position: fixed;
+    }
+    .car_con_plot_area {
+      margin-top: 110px !important;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .car_con_list {
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 0px !important;
+    ul {
+      margin-bottom: 0 !important;
+      width: fit-content;
+      flex-direction: row !important;
+      position: relative;
+      li {
+        width: 105px !important;
+        margin: 10px 5px !important;
+        padding: 5px !important;
+        height: 32px !important;
+        font-size: 16px !important;
+        span {
+          width: 15px !important;
+          height: 15px !important;
+        }
+      }
+    }
+  }
+  .car_title {
+    margin: 10px 0 !important;
+  }
+  .car_con_area_all {
+    padding: 0px;
+    border-radius: 0px !important;
+    .car_con_area {
+      overflow-x: scroll;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .car_title {
+    padding: 0;
+    > span {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    > div {
+      display: flex;
+      margin: 0 auto;
+      flex-direction: row;
+      justify-content: center;
+      // button{
+      //     width: 100%;
+      //     border-radius: 0px;
+      // }
+    }
+  }
+}
+@media screen and (max-width: 777px) {
+  .car_course_list {
+    padding: 0 15px;
+    .car_course_list_info {
+      padding: 0px 5px !important;
+    }
+  }
+}

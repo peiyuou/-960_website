@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>課程介紹</title>
+
+    @@include('app/link.html') @@include('app/script.html')
+    @@include('app/course_cdn.html')
+    <link rel="stylesheet" href="./css/pages_scss/course/course.css" />
+  </head>
+
+  <body>
+    <div id="course_main">
+      <div class="header_wrap">
+        <header class="header">
+          <div class="hamburger">
+            <button
+              class="hamburger hamburger--spring btn_switch"
+              type="button"
+            >
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+          <div class="logo">
+            <a href="front_index.html">
+              <img src="img/LOGO_FINAL.svg" alt="" />
+            </a>
+          </div>
+          <div class="header_nav">
+            <ul>
+              <li><a href="test_before.html" id="text_page">職涯分析</a></li>
+              <li><a href="career.html">行業攻略</a></li>
+              <li><a href="forum_discuss.html">職涯論壇</a></li>
+              <li><a href="course_main.html">探索課程</a></li>
+              <li><a href="post_intro.html">時光明信片</a></li>
+            </ul>
+          </div>
+          <div class="header_icon">
+            <div class="cart">
+              <button href="#">
+                <i class="fas fa-shopping-cart" id="add_effect"></i>
+                <div class="cart_num" v-show="cart_items.length !== 0">
+                  <span>{{cart_items.length}}</span>
+                </div>
+              </button>
+            </div>
+            <div class="member">
+              <a id="member_icon" href="member_sign_in.html"
+                ><i class="fas fa-user"></i
+              ></a>
+              <button id="header_logOut" @click="header_logOut">
+                <i class="fas fa-sign-out-alt"></i>
+              </button>
+            </div>
+          </div>
+        </header>
+      </div>
+      <!-- cart -->
+      <div class="side_cart cart_off">
+        <div class="cart_close">
+          <button id="cart_close" class="btn_third">
+            <i class="fas fa-reply"></i>
+          </button>
+          <span>購物車</span>
+        </div>
+        <div class="cart_course">
+          <p class="no_item" v-show="cart_items.length == 0">
+            <span>尚未添加課程，</span><br />
+            <span
+              >前去<a href="course_main.html" class="btn_second"
+                >探索課程</a
+              ></span
+            >
+          </p>
+          <ul>
+            <li class="cart_item" v-for="(item,index) in cart_items">
+              <div class="cus_card">
+                <a :href="'./course_introduce.html?ski_no=' + item.ski_no">
+                  <div class="card_img">
+                    <img :src="item.ski_img" alt="" />
+                  </div>
+                  <div class="card_content">
+                    <p>{{item.ski_name}}</p>
+                    <div class="card_content_scrb">
+                      <div class="card_content_msg">
+                        <span
+                          class="card_type"
+                          :style="'background:' + item.ind_color + ';'"
+                          >{{item.ind_class}}</span
+                        >
+                        <span class="card_price">NT${{item.ski_price}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="remove">
+                  <button @click="remove_item(index)">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="check_out_contain">
+          <div class="discount_title">
+            <p>購買兩堂課程，即享有8折優惠!</p>
+          </div>
+          <div class="price_check">
+            <ul>
+              <li><span>課程總金額:</span><span>NT${{add_total}}</span></li>
+              <li><span>折扣金額:</span><span>NT${{discount}}</span></li>
+            </ul>
+          </div>
+          <div class="price_total_btn">
+            <div class="price_total">
+              <span>總計:${{final_price}}</span>
+            </div>
+            <button class="check_out" @click="go_checkout">前往結帳</button>
+          </div>
+        </div>
+      </div>
+      @@include('app/lightbox_login.html')
+
+      <div class="course_introduce container">
+        <!-- banner -->
+        <div class="row">
+          <div class="course_introduce">
+            <div class="course_intro_banner col-xl-12">
+              <div class="intro_banner">
+                <div class="intro_banner_pic">
+                  <div class="banner_img">
+                    <img :src="introduce_single.ski_img" alt="" />
+                  </div>
+                  <div class="banner_type_btn">
+                    <div class="banner_type">
+                      <span>{{introduce_single.ind_class}}</span>
+                    </div>
+                    <div class="add_cart_btn">
+                      <button
+                        class="btn_intro_addcart"
+                        :class="'cus_' + introduce_single.ski_no"
+                        @click="add_cart(introduce_single,$event)"
+                      >
+                        <i class="fas fa-shopping-cart"></i>
+
+                        加入購物車
+                      </button>
+                      <button
+                        class="favorite btn_intro_favor"
+                        @click="add_check_favorite(introduce_single)"
+                      >
+                        <i class="far fa-bookmark"></i>
+
+                        收藏
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="intro_banner_content">
+                  <div class="banner_title">
+                    <h1>{{introduce_single.ski_name}}</h1>
+                    <div class="banner_teacher_price">
+                      <div class="banner_teacher_container">
+                        <a href="#teacher">
+                          <div class="banner_teacher_img">
+                            <img :src="introduce_single.ski_tec_img" alt="" />
+                          </div>
+                          <span>講師:{{introduce_single.ski_tec_name}}</span>
+                        </a>
+                      </div>
+                      <div class="banner_price">
+                        <p><span>價格:</span>${{introduce_single.ski_price}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner_describe">
+                    <p>{{introduce_single.ski_intro}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 學習到什麼/適合對象 -->
+        <div class="cus_learn row">
+          <div class="col-xl-6">
+            <div class="suitable_list">
+              <h2>這門課適合對象:</h2>
+              <ul>
+                <li v-for="(stud,index) in introduce_single.ski_stud">
+                  {{index+1}}.{{stud}}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="learn_list col-xl-6">
+            <div class="learn_list">
+              <h2>我將從這堂課學到什麼?</h2>
+              <ul>
+                <li v-for="(learn,index) in introduce_single.ski_harvest">
+                  {{index+1}}.{{learn}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- 課程大綱 -->
+        <div class="cus_outline row">
+          <div class="cus_outline_contain col-xl-12">
+            <h2>課程大綱</h2>
+            <ol>
+              <li v-for="(outline,index) in introduce_single.ski_outline">
+                章節{{index+1}} | {{outline}}
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- 講師介紹 -->
+        <div class="cus_teacher row">
+          <div class="teacher_img col-xl-4">
+            <div class="teacher_profile">
+              <img :src="introduce_single.ski_tec_img" alt="" />
+            </div>
+          </div>
+          <div class="teacher_intro col-xl-8">
+            <h2>講師:<span>{{introduce_single.ski_tec_name}}</span></h2>
+            <p>{{introduce_single.ski_tec_intro}}</p>
+          </div>
+        </div>
+
+        <!-- 推薦課程 -->
+
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="hot_course">
+              <div class="course_session_title">
+                <h2>推薦課程</h2>
+              </div>
+              <ul class="auto_slider owl-carousel" v-if="hot_course.length > 0">
+                <li class="auto_slider_card" v-for="card in introduce_suggest">
+                  <a :href="'./course_introduce.html?ski_no=' + card.ski_no">
+                    <div class="auto_slider_card_pic">
+                      <img
+                        :src="card.ski_img"
+                        :id="'img_drag'+ card.ski_no"
+                        alt=""
+                      />
+                      <span
+                        class="course_type"
+                        :style="'background:' + card.ind_color + ';'"
+                        >{{card.ind_class}}</span
+                      >
+                    </div>
+                  </a>
+                  <div class="auto_slider_card_content">
+                    <a :href="'./course_introduce.html?ski_no=' + card.ski_no">
+                      <p>{{card.ski_name}}</p>
+                    </a>
+                    <div class="card_content_scrb">
+                      <div class="card_content_join">
+                        <i class="fas fa-user-friends"></i>
+                        <span>{{card.ski_buy_num}}人已參與此課程</span>
+                      </div>
+                      <div class="card_content_msg">
+                        <span class="card_time">總計{{card.ski_time}}小時</span>
+                        <span class="card_price">NT${{card.ski_price}}</span>
+                      </div>
+                    </div>
+                    <div class="add_cart_btn">
+                      <button
+                        :class="'cus_' + card.ski_no"
+                        @click="add_cart(card,$event)"
+                      >
+                        <i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      @@include('app/footer.html')
+    </div>
+    <!-- <script src="./js/course/owl_auto_slide.js"></script> -->
+    <script src="./js/course/course_vue.js"></script>
+  </body>
+</html>

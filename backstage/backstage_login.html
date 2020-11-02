@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職引960後台登入</title>
+    <link rel="stylesheet" href="../css/app_public.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/backstage_login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="logo">
+                    <img src="./img/LOGO_FINAL.svg" alt="">
+                </div>
+                <h2>後台登入</h2>
+
+                <div class="account">
+                    <label for="AD_ACCOUNT">帳號:</label>
+                    <input type="text" class="text" name="AD_ACCOUNT">
+                </div>
+                <div class="password">
+                    <label for="AD_PASSWORD">密碼:</label>
+                    <input type="password" class="text" name="AD_PASSWORD">
+                </div>
+                <div class="login">
+                    <input type="submit" value="登入" class="btn_primary submit" id="bg_login">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <script>
+        $('#bg_login').click(function() {
+
+            var AD_PASSWORD = document.querySelector('.password input').value;
+            var AD_ACCOUNT = document.querySelector('.account input').value;
+            var formData = new FormData();
+            formData.append('AD_PASSWORD', AD_PASSWORD);
+            formData.append('AD_ACCOUNT', AD_ACCOUNT);
+            axios.post('backstage_loginCheck.php', formData)
+                .then((resp) => {
+                    // 沒登入跳視窗
+                    if (resp.data == 0) {
+                        alert('帳號或密碼錯誤，請重新輸入');
+
+                    } else {
+                        // 已經有登入
+                        window.location.href = "backstage_index.php";
+
+                    }
+                });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,883 @@
+@import "../../_public_dontTouch/utils/mixin";
+@import "../../_public_dontTouch/utils/variables";
+
+div.header_wrap header.header div.header_nav ul li:nth-child(2) a::after {
+  @include header_line;
+}
+
+body.car_body {
+  width: 100%;
+  background-color: #f6f3ed;
+  background-image: url("../../../img/career/career_background_img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.car_con_width {
+  display: flex;
+  padding: 0;
+  max-width: 1200px;
+  min-height: calc(100% - 130px);
+  flex-wrap: wrap;
+
+  .car_title {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    height: fit-content;
+    flex-wrap: wrap;
+    align-items: center;
+
+    div,
+    span {
+      display: flex;
+      padding: 0;
+      height: 40px;
+      align-items: center;
+    }
+
+    >span {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .choose_industry {
+      display: flex;
+      margin: 0px 5px;
+      padding: 5px;
+      flex-direction: row;
+      border-radius: 20px;
+      border: 2px solid #149e04;
+
+      i,
+      span {
+        display: flex;
+        align-items: center;
+      }
+
+      i {
+        cursor: pointer;
+      }
+
+      span {
+        padding-left: 3px;
+      }
+    }
+
+    .choose_industry:hover {
+      border-color: #c70000;
+
+      i {
+        color: #c70000;
+      }
+    }
+
+    button {
+      margin: 0 auto;
+    }
+  }
+
+  .car_con_area_all {
+    display: flex;
+    flex-wrap: wrap;
+
+    .car_con_area {
+      display: flex;
+      // margin-top: 10px;
+      padding: 0;
+      flex-wrap: wrap;
+
+      .car_con_list {
+        height: 100%;
+        max-height: calc(100vh - 76px);
+        padding: 0;
+        background: #f6f3ed;
+        border-radius: 20px;
+
+        ul {
+          margin-bottom: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          li {
+            margin: 5px auto;
+            width: 150px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: transparent;
+            border-radius: 50px;
+            padding: 5px 20px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+
+            span {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              border-radius: 50px;
+              margin-right: 10px;
+            }
+          }
+
+          .salary_rank {
+            background-color: transparent;
+            border-color: #c70000;
+
+            span {
+              background-color: #c70000;
+            }
+          }
+
+          .salary_rank.select_li,
+          .salary_rank:hover {
+            background-color: #c70000;
+            color: white;
+
+            span {
+              background-color: white;
+            }
+          }
+
+          .practical_bg_color {
+            background-color: transparent;
+            border-color: $practical_color;
+
+            span {
+              background-color: $practical_color;
+            }
+          }
+
+          .practical_bg_color.select_li,
+          .practical_bg_color:hover {
+            background-color: $practical_color;
+
+            span {
+              background-color: white;
+            }
+          }
+
+          .research_bg_color {
+            background-color: transparent;
+            border-color: $research_color;
+
+            span {
+              background-color: $research_color;
+            }
+          }
+
+          .research_bg_color.select_li,
+          .research_bg_color:hover {
+            background-color: $research_color;
+
+            span {
+              background-color: white;
+            }
+          }
+
+          .art_bg_color {
+            background-color: transparent;
+            border-color: $art_color;
+
+            span {
+              background-color: $art_color;
+            }
+          }
+
+          .art_bg_color.select_li,
+          .art_bg_color:hover {
+            background-color: $art_color;
+
+            span {
+              background-color: white;
+            }
+          }
+
+          .social_bg_color {
+            background-color: transparent;
+            border-color: $social_color;
+
+            span {
+              background-color: $social_color;
+            }
+          }
+
+          .social_bg_color.select_li,
+          .social_bg_color:hover {
+            background-color: $social_color;
+
+            span {
+              background-color: white;
+            }
+          }
+
+          .thing_bg_color {
+            background-color: transparent;
+            // border-color: $thing_color;
+            border-color: $enterprise_color;
+
+            span {
+              // background-color: $thing_color;
+              background-color: $enterprise_color;
+            }
+          }
+
+          .thing_bg_color.select_li,
+          .thing_bg_color:hover {
+            // background-color: $thing_color;
+            background-color: $enterprise_color;
+
+            span {
+              background-color: white;
+            }
+          }
+
+          .enterprise_bg_color {
+            background-color: transparent;
+            // border-color: $enterprise_color;
+            border-color: $thing_color;
+
+            span {
+              // background-color: $enterprise_color;
+              background-color: $thing_color;
+            }
+          }
+
+          .enterprise_bg_color.select_li,
+          .enterprise_bg_color:hover {
+            // background-color: $enterprise_color;
+            background-color: $thing_color;
+
+            span {
+              background-color: white;
+            }
+          }
+        }
+
+        .side_bar_img {
+          height: 100%;
+          max-height: calc(100% - 308px);
+
+          .side_bar_img_use {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .car_con_pro {
+      display: flex;
+      padding: 0;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+      // background-color: #79BBB5;
+      border-radius: 25px;
+
+      .car_con_pro_info {
+        display: flex;
+        margin: 15px;
+        padding: 0;
+        cursor: pointer;
+        flex-direction: column;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+        background-color: white;
+        border: 4px solid transparent;
+        border-radius: 25px;
+        overflow: hidden;
+
+        img {
+          margin: 15px auto;
+          width: 90%;
+          height: 100%;
+          max-height: 300px;
+        }
+
+        span {
+          display: flex;
+          width: 100%;
+          height: 40px;
+          background-color: white;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          position: absolute;
+          bottom: 32px;
+          // border-radius: 0 0 25px 25px;
+        }
+
+        .car_con_pro_check {
+          display: flex;
+          width: 100%;
+          height: 32px;
+          background-color: white;
+          flex-direction: row;
+          justify-content: center;
+          position: absolute;
+          bottom: 0;
+          border-radius: 0 0 25px 25px;
+
+          i {
+            width: 32px;
+            height: 32px;
+            font-size: 28px;
+          }
+
+          .fa-check-circle {
+            color: #149e04;
+          }
+
+          .fa-times-circle {
+            transform: rotate(45deg);
+            opacity: 0.5;
+          }
+        }
+      }
+
+      .show_border {
+        border-color: #149e04;
+      }
+    }
+
+    .car_course_area,
+    .car_forum_area {
+      display: flex;
+      margin: 20px auto;
+      padding: 0;
+      flex-wrap: wrap;
+      border-radius: 25px;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+      background-color: rgba(255, 255, 255, 0.7);
+
+      h3 {
+        margin: 10px auto;
+        width: fit-content;
+        background-image: url("../../../img/career/career_text_title_background.svg");
+      }
+
+      .car_course_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .car_course_list_info {
+          margin: 10px 0;
+          padding: 0;
+          // height: 300px;
+          background-color: white;
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+          border-radius: 5px;
+
+          .car_course_list_info_img {
+            width: 100%;
+
+            img {
+              width: 100%;
+            }
+
+            span {
+              display: inline-block;
+              padding: 5px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 5px;
+              box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+            }
+          }
+
+          a {
+            width: 100%;
+          }
+
+          p {
+            margin: 0 auto 15px;
+            width: fit-content;
+            font-size: 18px;
+            font-weight: 700;
+          }
+
+          span.car_course_list_info_word {
+            display: block;
+            margin: 5px auto;
+            width: fit-content;
+
+            i {
+              margin-right: 5px;
+            }
+          }
+
+          .car_course_list_info_hour {
+            margin-left: 15px;
+          }
+
+          .car_course_list_info_price {
+            margin-right: 15px;
+            float: right;
+            font-weight: 700;
+          }
+        }
+
+        .car_forum_list_info {
+          display: flex;
+          height: 40px;
+          cursor: pointer;
+          align-items: center;
+          border: 3px solid;
+          background-color: white;
+          transition: linear 0.2s;
+          margin: 5px 0;
+          line-height: 1.5;
+          border-radius: 10px;
+          width: 300px;
+
+          a {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+
+          span {
+            font-size: 18px;
+          }
+
+          span:first-child {
+            font-size: 15px;
+            padding: 3px;
+            border-radius: 5px;
+          }
+        }
+
+        .car_forum_list_info:hover {
+          transform: scale(1.05);
+          background: #f6f3ed;
+        }
+      }
+
+      a {
+        margin: 10px auto;
+      }
+    }
+
+    .car_con_plot_area {
+      display: none;
+      margin-top: 10px;
+      padding: 0;
+      height: fit-content;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+
+      h3 {
+        width: fit-content;
+        margin: 15px auto;
+      }
+
+      .car_con_plot {
+        margin-bottom: 60px;
+        height: 300px;
+      }
+    }
+
+    .showPlot {
+      display: block;
+      position: relative;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
+
+.mem_overlay {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  opacity: 1;
+  transition: opacity 1s;
+  display: none;
+
+  .mem_checkMsg {
+    background-color: #ccc;
+    border-radius: 10px;
+    height: 100%;
+    max-height: 100vh;
+    padding: 0 5px;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 800px;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    overflow: scroll;
+    overflow-x: hidden;
+
+    .close_btn {
+      height: 40px;
+      text-align: left;
+      padding-left: 5px;
+
+      .btn_modal_close {
+        width: 60px;
+        height: 30px;
+        line-height: 25px;
+      }
+    }
+
+    .mem_wrap,
+    .mem_ove_feedback {
+      background: #f8f6f2;
+
+      .mem_ove_info {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        line-height: 33px;
+        color: gray;
+
+        .mem_ove_list {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .mem_ove_img {
+            width: 40px;
+            // height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .mem_ove_name {
+            margin: 0 10px;
+          }
+        }
+
+        .mem_ove_tags {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-size: 100%;
+          font: inherit;
+          vertical-align: baseline;
+
+          span {
+            background-color: #1b4d9f;
+            padding: 5px;
+            border-radius: 5px;
+            color: #fff;
+          }
+        }
+      }
+
+      .mem_ove_title {
+        padding: 20px;
+        font-weight: 700;
+        font-size: 22px;
+      }
+
+      .mem_ove_textarea {
+        padding: 5px 20px;
+        letter-spacing: 1px;
+        color: #000;
+        line-height: 1.5;
+      }
+
+      .mem_ove_btn {
+        padding-top: 15px;
+        text-align: end;
+
+        .heart {
+          box-sizing: border-box;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          border: none;
+          outline: 0;
+          border-radius: 50%;
+
+          i {
+            width: 100%;
+            height: 100%;
+            font-size: 21px;
+            cursor: pointer;
+            color: #ada9a9;
+          }
+
+          i.colorRed {
+            color: red;
+          }
+        }
+
+        .gray_btn {
+          box-sizing: border-box;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          border: none;
+          outline: 0;
+          border-radius: 50%;
+
+          i {
+            width: 100%;
+            height: 100%;
+            font-size: 21px;
+            cursor: pointer;
+            color: #ada9a9;
+          }
+
+          i.colorGray {
+            color: #4b4747;
+          }
+        }
+      }
+
+      .mem_ove_feedback_content {
+        background-color: #f8f6f2;
+        margin: 5px 0;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .mem_ove_feedback {
+      background-color: transparent;
+    }
+
+    .mem_ove_feedback_count {
+      text-align: center;
+      background-color: #f7ecd9;
+      padding: 10px;
+      margin: 5px 0;
+    }
+
+    .mem_ove_leave_msg {
+      width: 100%;
+      background-color: #fff;
+      text-align: right;
+      position: sticky;
+      bottom: 0;
+
+      .send_msg {
+        width: 100%;
+        resize: none;
+        border: none;
+        padding: 10px;
+      }
+
+      .mem_ove_msg_btn {
+        padding-bottom: 15px;
+        text-align: center;
+
+        #send_msg_btn {
+          width: 60px;
+          height: 30px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}
+
+.artShow {
+  z-index: 300;
+  position: fixed;
+  display: block;
+}
+
+.impeachment_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s;
+
+  >article {
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f5edde;
+
+    .accuse_close_btn {
+      text-align: right;
+    }
+
+    h3,
+    .accuse_send_btn {
+      text-align: center;
+    }
+
+    .accuse_wrap {
+      width: 300px;
+      padding-top: 10px;
+
+      p {
+        padding: 5px;
+      }
+    }
+  }
+}
+
+.-on {
+  opacity: 1;
+  z-index: 400;
+}
+
+.bg_of_lightbx {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  // border: 1px solid red;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  display: none;
+
+  .lightbx_login {
+    border: 2px solid #ffffff;
+    display: flex;
+    padding: 1%;
+    max-width: 450px;
+    min-width: 320px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffe56d;
+    border-radius: 25px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+    box-shadow: 0px 0px 5px #444444;
+
+    .close_icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 15px;
+      border: 2px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #119beb;
+      color: white;
+      cursor: pointer;
+      transition: linear 0.2s;
+
+      &:hover {
+        background: #ee7002;
+      }
+    }
+
+    .cutie_top {
+      width: 150px;
+      position: absolute;
+      top: -65px;
+    }
+
+    .tiny_logo {
+      margin: 3% 0;
+      width: 100px;
+    }
+
+    h2 {
+      font-weight: bolder;
+      color: #3f3f3f;
+      padding: 1%;
+    }
+
+    .input_div {
+      display: flex;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 350px;
+      min-width: 320px;
+      flex-direction: column;
+
+      label {
+        display: flex;
+        height: 40px;
+        align-items: center;
+      }
+
+      input {
+        margin: 0;
+        padding: 0 10px;
+        width: 100%;
+        height: 35px;
+        border: 0px;
+        border-radius: 25px;
+      }
+    }
+
+    .input_btn_bx {
+      //   border: 1px solid red;
+      display: flex;
+      margin: 5% 0;
+      width: 100%;
+      flex-direction: row;
+
+      button {
+        margin: 0 auto;
+      }
+    }
+
+    .go_sign_up {
+      //   border: 2px solid blue;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      //   padding: 3%;
+      a {
+        padding: 1%;
+        font-weight: bolder;
+        color: #119beb;
+        transition: linear 0.3s;
+
+        &:hover {
+          // box-shadow: 2px 2px 0px #EE7002;
+          color: #ee7002;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+
+  .mem_overlay .mem_checkMsg .mem_ove_feedback .mem_ove_info .mem_ove_list,
+  .mem_overlay .mem_checkMsg .mem_wrap .mem_ove_info .mem_ove_list {
+    font-size: 14px;
+  }
+
+  .mem_overlay .mem_checkMsg .mem_ove_feedback .mem_ove_info .mem_ove_tags,
+  .mem_overlay .mem_checkMsg .mem_wrap .mem_ove_info .mem_ove_tags {
+    font-size: 12px;
+  }
+}

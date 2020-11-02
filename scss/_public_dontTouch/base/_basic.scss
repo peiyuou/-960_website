@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+// main_color
+// 實作型 practical
+// 研究型 research
+// 文藝型 art
+// 社會型 social
+// 事務型 thing
+// 企業型 enterprise
+.practical_bg_color {
+  background: #79bbb5;
+}
+
+.research_bg_color {
+  background: #a0cadb;
+}
+
+.art_bg_color {
+  background: #ccc5e3;
+}
+
+.social_bg_color {
+  background: #f4c3c5;
+}
+
+.thing_bg_color {
+  background: #e7995f;
+}
+
+.enterprise_bg_color {
+  background: #f7ea92;
+}
+
+// ------------
+// 輔色
+.second_color1 {
+  background: #ffe56d;
+}
+
+.second_color2 {
+  background: #f6f3ed;
+}
+
+.second_color3 {
+  background: #bceaff;
+}
+
+// -------------
+// 購物車按鈕
+button.cart_clicked {
+  background: #ed7007 !important;
+  color: #fff;
+}
+
+button.bought {
+  background: gray !important;
+  color: #fff;
+}

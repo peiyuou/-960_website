@@ -1,0 +1,33 @@
+    @keyframes circle {
+        0% {
+            height: 510px;
+            border-radius: 100%;
+            background: $practical_color;
+            transform: rotate(0deg);
+        }
+        25% {
+            width: 510px;
+            border-radius: 100%;
+            background: #F7EA92;
+            transform: rotate(45deg);
+        }
+        50% {
+            width: 530px;
+            border-radius: 50% 50% 60% 80%;
+            background: $enterprise_color;
+            transform: rotate(90deg);
+        }
+        75% {
+            width: 500px;
+            border-radius: 50% 50% 50% 30%;
+            background: #F4C3C5;
+            transform: rotate(135deg);
+        }
+        100% {
+            height: 520px;
+            width: 530px;
+            border-radius: 50% 50% 50% 50%;
+            background: $research_color;
+            transform: rotate(180deg);
+        }
+    }
